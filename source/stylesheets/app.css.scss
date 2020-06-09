@@ -9,3 +9,12 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: $gray;
+  background-image: image_url('greyzz.png');
+}
+h1 {
+  font-family: 'Montserrat', sans-serif;
+}

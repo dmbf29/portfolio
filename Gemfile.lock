@@ -88,8 +88,6 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     sass (3.4.21)
-    sass-globbing (1.1.5)
-      sass (>= 3.1)
     servolux (0.13.0)
     sprockets (3.7.1)
       concurrent-ruby (~> 1.0)
@@ -110,7 +108,6 @@ DEPENDENCIES
   middleman (~> 4.2)
   middleman-gh-pages
   middleman-sprockets
-  sass-globbing
   tzinfo-data
   wdm (~> 0.1.0)
 
