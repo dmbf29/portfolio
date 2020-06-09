@@ -25,20 +25,20 @@
     - devicon-heroku-original
     - devicon-javascript-plain
 
-- name: Gibbit
-  description: An online service that helps foreigners living abroad
-  image: gibbit.png
-  tags:
-    - devicon-rails-plain-wordmark
-    - devicon-postgresql-plain-wordmark
-    - devicon-heroku-original
-    - devicon-javascript-plain
-
 - name: World Cup Predictor
   description: Interactive layout to predict the 2018 World Cup results
   image: worldcup.png
   tags:
     - devicon-react-original-wordmark
+    - devicon-rails-plain-wordmark
+    - devicon-postgresql-plain-wordmark
+    - devicon-heroku-original
+    - devicon-javascript-plain
+
+- name: Le Wagon Japan
+  description: Comprehensive list of student projects
+  image: lewagonjapan.png
+  tags:
     - devicon-rails-plain-wordmark
     - devicon-postgresql-plain-wordmark
     - devicon-heroku-original
@@ -60,18 +60,9 @@
     - devicon-heroku-original
     - devicon-javascript-plain
 
-- name: Simpons Database
-  description: A list of every Simpons character
-  image: simpsons.png
-  tags:
-    - devicon-rails-plain-wordmark
-    - devicon-postgresql-plain-wordmark
-    - devicon-heroku-original
-    - devicon-javascript-plain
-
-- name: Starwars Universe
-  description: A list of every Star Wars planet and character
-  image: starwars.png
+- name: Gibbit
+  description: An online service that helps foreigners living abroad
+  image: gibbit.png
   tags:
     - devicon-rails-plain-wordmark
     - devicon-postgresql-plain-wordmark
@@ -96,9 +87,18 @@
     - devicon-heroku-original
     - devicon-javascript-plain
 
-- name: Mr. Cocktail
-  description: A collection of cocktail ingredients
-  image: cocktail.png
+- name: Simpons Database
+  description: A list of every Simpons character
+  image: simpsons.png
+  tags:
+    - devicon-rails-plain-wordmark
+    - devicon-postgresql-plain-wordmark
+    - devicon-heroku-original
+    - devicon-javascript-plain
+
+- name: Starwars Universe
+  description: A list of every Star Wars planet and character
+  image: starwars.png
   tags:
     - devicon-rails-plain-wordmark
     - devicon-postgresql-plain-wordmark
@@ -108,6 +108,24 @@
 - name: Yannify
   description: Add Yann's face to your photo
   image: yannify.png
+  tags:
+    - devicon-rails-plain-wordmark
+    - devicon-postgresql-plain-wordmark
+    - devicon-heroku-original
+    - devicon-javascript-plain
+
+- name: Squad Manager
+  description: Practicing drag-and-drop API
+  image: squadmanager.png
+  tags:
+    - devicon-rails-plain-wordmark
+    - devicon-postgresql-plain-wordmark
+    - devicon-heroku-original
+    - devicon-javascript-plain
+
+- name: Mr. Cocktail
+  description: A collection of cocktail ingredients
+  image: cocktail.png
   tags:
     - devicon-rails-plain-wordmark
     - devicon-postgresql-plain-wordmark
