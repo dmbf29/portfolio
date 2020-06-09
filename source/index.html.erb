@@ -8,32 +8,75 @@
         <div class="navigation-button d-flex flex-column justify-content-center align-items-center">
           <i class="fas fa-info-circle"></i>
           <span>About</span>
+          <%= link_to "", "#about", class: 'navigation-button-link' %>
         </div>
         <div class="navigation-button d-flex flex-column justify-content-center align-items-center">
           <i class="fas fa-laptop-code"></i>
           <span>Projects</span>
+          <%= link_to "", "#projects", class: 'navigation-button-link' %>
         </div>
-        <div class="navigation-button d-flex flex-column justify-content-center align-items-center">
+        <!-- <div class="navigation-button d-flex flex-column justify-content-center align-items-center">
           <i class="fas fa-users"></i>
           <span>Batches</span>
-        </div>
+        </div> -->
         <div class="navigation-button d-flex flex-column justify-content-center align-items-center">
           <i class="fas fa-play-circle"></i>
           <span>Video</span>
+          <%= link_to "", "#videos", class: 'navigation-button-link' %>
         </div>
       </div>
     </div>
   </div>
   <!-- About Section -->
-  <div class="row">
-    <div class="col-12">
-      <div class="main-container">
-        <h2 id="about">Hello 👋</h2>
-        <p>I'm a web developer and director at Le Wagon Japan. I'm based out of Tokyo, but originally from St. Louis, MO, USA</p>
-        <p>If you are interested in my story, you can read this blog that Le Wagon wrote.</p>
-        <% link_to "https://www.lewagon.com/blog/meet-our-team-douglas", target: '_blank' do %>
-          <%= image_tag "blog.png", alt: "alttext", style: 'width:100%' %>
-        <% end %>
+  <div class="wrapper-white">
+    <div class="row">
+      <div class="col-12">
+        <div class="main-container" id="about">
+          <h2>Hello 👋</h2>
+          <p>I'm a web developer and director at Le Wagon Japan. I'm based out of Tokyo, but originally from St. Louis, MO, USA</p>
+          <p>If you are interested in my story, you can read this article, which goes into more detail.</p>
+          <% link_to "https://www.lewagon.com/blog/meet-our-team-douglas", target: '_blank' do %>
+            <%= image_tag "blog.png", alt: "alttext", style: 'width:100%' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Projects Section -->
+  <div class="wrapper-white">
+    <div class="row">
+      <div class="col-12">
+        <div class="main-container" id="projects" style="margin-bottom: 0;background-color: transparent;padding-bottom: 0">
+          <h2>Projects</h2>
+          <p>This is a list of healthy mix of personal and professional projects.</p>
+        </div>
+        <div class="cards" style="padding-top: 4px;">
+          <% data.products.each do |product| %>
+            <div>
+              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path(product.image) %>)">
+                <div class="card-description">
+                  <h5><%= product.name %></h5>
+                  <p><%= product.description %></p>
+                  <% product.tags.each do |tag| %>
+                    <span><i class="<%= tag %>"></i></span>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Video Section -->
+  <div class="wrapper-white">
+    <div class="row">
+      <div class="col-12">
+        <div class="main-container" id="videos">
+          <h2>Video</h2>
+          <p>Pitch night where I presented Gibbit after completing Le Wagon</p>
+          <iframe src="https://www.youtube.com/embed/QMDunGmWEAw?start=1661" frameborder="0" allowfullscreen></iframe>
+        </div>
       </div>
     </div>
   </div>

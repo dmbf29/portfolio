@@ -1,3 +1,13 @@
 .navigation-button {
   padding: 0 16px;
+  position: relative;
+  font-size: 20px;
+}
+
+.navigation-button-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }

@@ -1,4 +1,117 @@
-- name: Some product
-  image: some_product.png
-- name: Other product
-  image: other_product.png
+- name: Advanced COD
+  description: Cash on delivery app listed on the Shopify store.
+  image: advanced_cod.png
+  tags:
+    - devicon-rails-plain-wordmark
+    - devicon-postgresql-plain-wordmark
+    - devicon-heroku-original
+    - devicon-javascript-plain
+
+- name: Easy Label
+  description: Generate Japan Post shipping labels on the Shopify store.
+  image: easylabel.png
+  tags:
+    - devicon-rails-plain-wordmark
+    - devicon-postgresql-plain-wordmark
+    - devicon-heroku-original
+    - devicon-javascript-plain
+
+- name: Easy Rates
+  description: Display shipping rates from Japan post on the Shopify store.
+  image: easyrates.png
+  tags:
+    - devicon-rails-plain-wordmark
+    - devicon-postgresql-plain-wordmark
+    - devicon-heroku-original
+    - devicon-javascript-plain
+
+- name: Gibbit
+  description: An online service that helps foreigners living abroad
+  image: gibbit.png
+  tags:
+    - devicon-rails-plain-wordmark
+    - devicon-postgresql-plain-wordmark
+    - devicon-heroku-original
+    - devicon-javascript-plain
+
+- name: World Cup Predictor
+  description: Interactive layout to predict the 2018 World Cup results
+  image: worldcup.png
+  tags:
+    - devicon-react-original-wordmark
+    - devicon-rails-plain-wordmark
+    - devicon-postgresql-plain-wordmark
+    - devicon-heroku-original
+    - devicon-javascript-plain
+
+- name: Shopify Translator
+  description: Chrome extension that translates Shopify into Japanese
+  image: translator.png
+  tags:
+    - devicon-chrome-plain-wordmark
+    - devicon-javascript-plain
+
+- name: Premier Football
+  description: Fantasy Premier League application.
+  image: prem_football.png
+  tags:
+    - devicon-rails-plain-wordmark
+    - devicon-postgresql-plain-wordmark
+    - devicon-heroku-original
+    - devicon-javascript-plain
+
+- name: Simpons Database
+  description: A list of every Simpons character.
+  image: simpsons.png
+  tags:
+    - devicon-rails-plain-wordmark
+    - devicon-postgresql-plain-wordmark
+    - devicon-heroku-original
+    - devicon-javascript-plain
+
+- name: Starwars Universe
+  description: A list of every Star Wars planet and character.
+  image: starwars.png
+  tags:
+    - devicon-rails-plain-wordmark
+    - devicon-postgresql-plain-wordmark
+    - devicon-heroku-original
+    - devicon-javascript-plain
+
+- name: Yahtzee Online
+  description: Play Yahtzee online with your friends.
+  image: yahtzee.png
+  tags:
+    - devicon-rails-plain-wordmark
+    - devicon-postgresql-plain-wordmark
+    - devicon-heroku-original
+    - devicon-javascript-plain
+
+- name: Dave Beck Music
+  description: Events page for a popular music act based in Seoul, Korea
+  image: davebeckmusic.png
+  tags:
+    - devicon-rails-plain-wordmark
+    - devicon-postgresql-plain-wordmark
+    - devicon-heroku-original
+    - devicon-javascript-plain
+
+- name: Mr. Cocktail
+  description: A collection of cocktail ingredients.
+  image: cocktail.png
+  tags:
+    - devicon-rails-plain-wordmark
+    - devicon-postgresql-plain-wordmark
+    - devicon-heroku-original
+    - devicon-javascript-plain
+
+- name: Yannify
+  description: Add Yann's face to your photo.
+  image: yannify.png
+  tags:
+    - devicon-rails-plain-wordmark
+    - devicon-postgresql-plain-wordmark
+    - devicon-heroku-original
+    - devicon-javascript-plain
+
+
