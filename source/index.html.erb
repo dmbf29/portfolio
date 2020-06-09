@@ -1,5 +1,6 @@
-<div class="container banner">
-  <div class="row justify-content-center h-100">
+<div class="container ">
+  <!-- Banner Section -->
+  <div class="row justify-content-center banner">
     <div class="col-12 d-flex flex-column justify-content-center align-items-center h-100">
       <h1 class="title-main">Douglas</h1>
       <%= image_tag "face.jpg", alt: "doug_photo", class: 'avatar-large-square my-4' %>
@@ -20,6 +21,19 @@
           <i class="fas fa-play-circle"></i>
           <span>Video</span>
         </div>
+      </div>
+    </div>
+  </div>
+  <!-- About Section -->
+  <div class="row">
+    <div class="col-12">
+      <div class="main-container">
+        <h2 id="about">Hello 👋</h2>
+        <p>I'm a web developer and director at Le Wagon Japan. I'm based out of Tokyo, but originally from St. Louis, MO, USA</p>
+        <p>If you are interested in my story, you can read this blog that Le Wagon wrote.</p>
+        <% link_to "https://www.lewagon.com/blog/meet-our-team-douglas", target: '_blank' do %>
+          <%= image_tag "blog.png", alt: "alttext", style: 'width:100%' %>
+        <% end %>
       </div>
     </div>
   </div>
