@@ -8,7 +8,7 @@
     - devicon-javascript-plain
 
 - name: Easy Label
-  description: Generate Japan Post shipping labels on the Shopify store
+  description: Automatically generate Japan Post shipping labels
   image: easylabel.png
   tags:
     - devicon-rails-plain-wordmark
