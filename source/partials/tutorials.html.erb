@@ -1,14 +1,14 @@
 <div class="wrapper-white">
   <div class="row">
     <div class="col-12">
-      <div class="main-container" id="projects" style="margin-bottom: 0;background-color: transparent;padding-bottom: 0">
+      <div class="main-container" id="tutorials" style="margin-bottom: 0;background-color: transparent;padding-bottom: 0">
         <h2>Tutorials</h2>
         <p>Collection of features I found myself coming back to.</p>
-        <ul>
+        <ul class='pl-3'>
           <% data.tutorials.each do |tutorial| %>
             <li class='d-flex ul-title'>
               - <%= tutorial.title %>
-              <div class="d-flex ml-3">
+              <div class="d-flex ml-2">
                 <% tutorial.tags.each do |tag| %>
                   <span class='tutorial-tag'><%= tag %></span>
                 <% end %>
