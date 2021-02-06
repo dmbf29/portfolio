@@ -4,6 +4,18 @@
       <div class="main-container" id="projects" style="margin-bottom: 0;background-color: transparent;padding-bottom: 0">
         <h2>Tutorials</h2>
         <p>Collection of features I found myself coming back to.</p>
+        <ul>
+          <% data.tutorials.each do |tutorial| %>
+            <li class='d-flex'>
+              <%= tutorial.title %>
+              <div class="d-flex">
+                <% tutorial.tags.each do |tag| %>
+                  <span class='tutorial-tag'><%= tag %></span>
+                <% end %>
+              </div>
+            </li>
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>

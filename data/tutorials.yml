@@ -1,0 +1,37 @@
+- title: Buttons to accept and reject a booking
+  tags:
+    - rails
+    - css
+
+- title: Building tabs
+  tags:
+    - bootstrap
+    - css
+
+- title: Passing variables into partials
+  tags:
+    - rails
+
+- title: Seeding with fake user images
+  tags:
+    - rails
+
+- title: Conditional navbar
+  tags:
+    - rails
+    - bootstrap
+
+- title: Form with nested resources
+  tags:
+    - rails
+    - simple_form
+
+- title: Building a photo grid
+  tags:
+    - html
+    - css
+    - rails
+
+- title: Routing for bookings. Customer vs. Owner
+  tags:
+    - rails
