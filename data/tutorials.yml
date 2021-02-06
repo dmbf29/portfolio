@@ -8,6 +8,7 @@
   filename: tabs.html
   tags:
     - bootstrap
+    - html
     - css
 
 - title: Passing variables into partials
@@ -21,10 +22,9 @@
     - rails
 
 - title: Conditional navbar
-  filename: booking_status.html
+  filename: conditional_navbar.html
   tags:
     - rails
-    - bootstrap
 
 - title: Form with nested resources
   filename: booking_status.html

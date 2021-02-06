@@ -1,0 +1,73 @@
+<div class="nav-group">
+  <i class="fas fa-chevron-left font-bold"></i>
+  <%= image_tag "face.jpg", alt: "doug_photo", class: 'avatar-small-square ml-3' %>
+  <%= link_to '', '/#tutorials', class: 'nav-group-link'  %>
+</div>
+<div class="container mt-3 mb-5">
+  <div class="row">
+    <div class="small-container">
+      <h1 class='small-h1-header'>Conditional Navbar</h1>
+      <p class='m-0'><em>Using a conditional to only display the navbar on specific pages</em></p>
+
+      <div class="tutorial-section">
+        <p>This one is easier than you think. You may have noticed, but in Rails, the params gives you the controller and action that you're currently in. Try it out. Throw a <code>raise</code> in your controller, then refresh the browser.
+        </p>
+      </div>
+
+      <div class="tutorial-section">
+        <% code("ruby") do %>
+          # app/controllers/pages_controller.rb
+          def home
+            raise
+          end
+        <% end %>
+      </div>
+
+      <div class="tutorial-section">
+        <%= image_tag 'tutorials/raise_error.png', alttext: 'raise error message', width: '100%' %>
+        <p>Now you'll notice if you look below the source code, Rails lists out our parameters which appear to be empty. But when where look inside of the <code>params</code> in the console, it's giving us a hash with information we can use.</p>
+      </div>
+
+      <div class="tutorial-section">
+        <%= image_tag 'tutorials/params_controller_action.png', alttext: 'raise error message', width: '100%' %>
+        <p>Inside of that hash, we have acess to both the <code>controller</code> and the <code>action</code>.</p>
+      </div>
+
+      <div class="tutorial-section">
+        <h3 class='small-h3-header'>The Solution</h3>
+        <p>Now go to your <code>application.html.erb</code> file and let's build a conditional statement based on these two values.</p>
+      </div>
+
+      <div class="tutorial-section">
+        <h5 class='small-h5-header'>1. Removing navbar on landing page</h5>
+        <% code("erb") do %>
+          # app/view/layouts/application.html.erb
+          # ...
+          <body>
+            <%% unless params[:controller] == 'pages' && params[:action] == 'home' %>
+              <%%= render 'shared/navbar' %>
+            <%% end %>
+            <%%= yield %>
+            ...
+        <% end %>
+      </div>
+
+      <div class="tutorial-section">
+        <h5 class='small-h5-header'>2. Display a different navbar for a signed in user (w/Devise)</h5>
+        <% code("erb") do %>
+          # app/view/layouts/application.html.erb
+          # ...
+          <body>
+            <%% if user_signed_in? %>
+              <%%= render 'shared/user_navbar' %>
+            <%% else  %>
+              <%%= render 'shared/default_navbar' %>
+            <%% end %>
+            <%%= yield %>
+            ...
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
