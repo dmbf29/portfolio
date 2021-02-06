@@ -19,3 +19,21 @@
   color: $dark-gray;
   color: white;
 }
+
+.nav-group {
+  display: flex;
+  margin: 20px 0 0 20px;
+  align-items: center;
+  position: relative;
+}
+
+.nav-group-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 66px;
+}
+.nav-arrow {
+  font-size: 32px;
+}
