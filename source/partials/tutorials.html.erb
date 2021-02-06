@@ -6,9 +6,9 @@
         <p>Collection of features I found myself coming back to.</p>
         <ul>
           <% data.tutorials.each do |tutorial| %>
-            <li class='d-flex'>
-              <%= tutorial.title %>
-              <div class="d-flex">
+            <li class='d-flex ul-title'>
+              - <%= tutorial.title %>
+              <div class="d-flex ml-3">
                 <% tutorial.tags.each do |tag| %>
                   <span class='tutorial-tag'><%= tag %></span>
                 <% end %>
