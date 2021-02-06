@@ -1,4 +1,9 @@
 .ul-title {
-  color: $normal-gray;
+  a {
+    color: $normal-gray;
+  }
+  a:hover {
+    text-decoration: none;
+  }
   margin: 16px 0;
 }
