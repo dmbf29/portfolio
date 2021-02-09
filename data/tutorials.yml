@@ -1,3 +1,10 @@
+- title: Making an entire card clickable
+  filename: clickable_card.html
+  tags:
+    - html
+    - css
+    - rails
+
 - title: Building tabs with style
   filename: tabs.html
   tags:
@@ -10,15 +17,8 @@
   tags:
     - rails
 
-- title: Making an entire card clickable
-  filename: clickable_card.html
-  tags:
-    - html
-    - css
-    - rails
-
 - title: Buttons to change the status of a booking
-  filename: tabs.html
+  filename: booking_status.html
   tags:
     - rails
     - css
