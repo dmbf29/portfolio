@@ -50,6 +50,7 @@ activate :metaman, host: 'http://www.douglasberkley.com/'
 
 # Use sprockets for JS requires
 activate :sprockets
+activate :syntax
 
 # Build-specific configuration
 configure :build do

@@ -1,0 +1,24 @@
+<div class="wrapper-white">
+  <div class="row">
+    <div class="col-12">
+      <div class="main-container" id="tutorials" style="margin-bottom: 0;background-color: transparent;padding-bottom: 0">
+        <h2>Tutorials</h2>
+        <p>Collection of features I found myself coming back to.</p>
+        <ul class='pl-3'>
+          <% data.tutorials.each do |tutorial| %>
+            <div class="d-flex ul-title">
+            <li class='d-flex'>
+              - <%= link_to tutorial.title, "/tutorials/#{tutorial.filename}" %>
+            </li>
+            <div class="d-flex">
+                <% tutorial.tags.each do |tag| %>
+                  <span class='tutorial-tag'><%= tag %></span>
+                <% end %>
+            </div>
+            </div>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

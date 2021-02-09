@@ -1,0 +1,10 @@
+.ul-title {
+  flex-wrap: wrap;
+  a {
+    color: $normal-gray;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  margin: 16px 0;
+}

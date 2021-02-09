@@ -1,0 +1,41 @@
+.small-container {
+  max-width: 750px;
+  margin: auto;
+  width: 100%;
+}
+
+.small-h1-header {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.small-h3-header {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.small-h5-header {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.tutorial-container {
+  background: white;
+  padding: 20px;
+  width: 100%;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  margin: 10px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.tutorial-section {
+  padding: 16px 0;
+  p {
+    margin: 0;
+  }
+}
+
+.tutorial-feature {
+  background-color: $light-gray;
+}

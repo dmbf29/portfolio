@@ -1,0 +1,52 @@
+- title: Making an entire card clickable
+  filename: clickable_card.html
+  tags:
+    - html
+    - css
+    - rails
+
+- title: Building tabs with style
+  filename: tabs.html
+  tags:
+    - bootstrap
+    - html
+    - css
+
+- title: Conditional navbar
+  filename: conditional_navbar.html
+  tags:
+    - rails
+
+- title: Buttons to change the status of a booking
+  filename: booking_status.html
+  tags:
+    - rails
+    - css
+
+# - title: Passing variables into partials
+#   filename: tabs.html
+#   tags:
+#     - rails
+
+# - title: Seeding with fake user images
+#   filename: tabs.html
+#   tags:
+#     - rails
+
+# - title: Form with nested resources
+#   filename: tabs.html
+#   tags:
+#     - rails
+#     - simple_form
+
+# - title: Building a photo grid
+#   filename: tabs.html
+#   tags:
+#     - html
+#     - css
+#     - rails
+
+# - title: Routing for bookings. Customer vs. Owner
+#   filename: tabs.html
+#   tags:
+#     - rails

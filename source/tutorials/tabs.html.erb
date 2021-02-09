@@ -1,0 +1,162 @@
+<div class="nav-group">
+  <i class="fas fa-chevron-left font-bold"></i>
+  <%= image_tag "face.jpg", alt: "doug_photo", class: 'avatar-small-square ml-3' %>
+  <%= link_to '', '/#tutorials', class: 'nav-group-link'  %>
+</div>
+<div class="container mt-3 mb-5">
+  <div class="row">
+    <div class="small-container">
+      <h1 class='small-h1-header'>Building tabs with style</h1>
+      <p class='m-0'><em>Combining function with style</em></p>
+
+      <div class="tutorial-section">
+        <p>There's no reason to reinvent the wheel here. The tabs that Bootstrap so nicely provide for us give us all of the funtionality that we need. Just give them a nice click-around.
+        </p>
+      </div>
+
+      <div class="tutorial-container">
+        <div class="tutorial-section">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Bookings</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Requests</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Conversations</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat commodi iure adipisci? Non a ratione similique laudantium beatae harum ex corporis aut sequi officiis vero labore quia illo, deleniti fuga? sit amet consectetur adipisicing.
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia perspiciatis, placeat quibusdam minima quam, labore dolorem nam sequi tempore fugiat voluptas cum quod molestias nemo quae itaque est voluptatibus perferendis?
+            </div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem quas ipsa nihil iure dicta perferendis ullam dolorem, distinctio eveniet ad voluptatem magnam illo quam quod dignissimos, repudiandae cum eos similique.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tutorial-section">
+        <h3 class='small-h3-header'>The Problem</h3>
+        <p>They look terrible.</p>
+      </div>
+
+      <div class="tutorial-section">
+        <p>Thankfully the kind developers at Le Wagon have provided us with some nice tabs with style. (But they don't go anywhere.)
+        </p>
+      </div>
+      <div class="tutorial-container">
+        <ul class="list-inline tabs-underlined">
+          <li>
+            <a href="#" class="tab-underlined active">Bookings</a>
+          </li>
+          <li>
+            <a href="#" class="tab-underlined">Requests</a>
+          </li>
+          <li>
+            <a href="#" class="tab-underlined">Conversations</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tutorial-section">
+        <h3 class='small-h3-header'>The Solution</h3>
+        <p>Combine the JavaScript functionality behind the Bootstrap ones with the Le Wagon style tabs with only minor tweaks.</p>
+      </div>
+
+      <div class="tutorial-container">
+        <ul class="nav tabs-underlined" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a class="active tab-underlined" id="home-tab" data-toggle="tab" href="#home_new" role="tab" aria-controls="home" aria-selected="true">Bookings</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="tab-underlined" id="profile-tab" data-toggle="tab" href="#profile_new" role="tab" aria-controls="profile" aria-selected="false">Requests</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="tab-underlined" id="contact-tab" data-toggle="tab" href="#contact_new" role="tab" aria-controls="contact" aria-selected="false">Conversations</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade py-3 show active" id="home_new" role="tabpanel" aria-labelledby="home-tab">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat commodi iure adipisci? Non a ratione similique laudantium beatae harum ex corporis aut sequi officiis vero labore quia illo, deleniti fuga? sit amet consectetur adipisicing.
+          </div>
+          <div class="tab-pane fade py-3" id="profile_new" role="tabpanel" aria-labelledby="profile-tab">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia perspiciatis, placeat quibusdam minima quam, labore dolorem nam sequi tempore fugiat voluptas cum quod molestias nemo quae itaque est voluptatibus perferendis?
+          </div>
+          <div class="tab-pane fade py-3  " id="contact_new" role="tabpanel" aria-labelledby="contact-tab">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem quas ipsa nihil iure dicta perferendis ullam dolorem, distinctio eveniet ad voluptatem magnam illo quam quod dignissimos, repudiandae cum eos similique.
+          </div>
+        </div>
+      </div>
+
+      <div class="tutorial-section">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <h3 class='small-h3-header'>The SCSS</h3>
+          <button type='button' class='btn btn-dark btn-copy' data-container="body" data-toggle="popover" data-placement="top" data-content="Copied!">Copy</button>
+        </div>
+        <% code("scss") do %>
+          .tabs-underlined {
+            display: flex;
+            align-items: center;
+          }
+
+          .tabs-underlined {
+            .tab-underlined {
+              color: black;
+              padding: 8px;
+              margin: 8px 16px;
+              opacity: .4;
+              cursor: pointer;
+              text-decoration: none;
+              border-bottom: 4px solid transparent;
+              display: block;
+            }
+            .tab-underlined:hover {
+              opacity: 0.5;
+            }
+            .tab-underlined.active {
+              opacity: 1;
+              border-bottom: 3px solid #555555;
+            }
+          }
+        <% end %>
+      </div>
+
+      <div class="tutorial-section">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <h3 class='small-h3-header'>The HTML</h3>
+          <button type='button' class='btn btn-dark btn-copy' data-container="body" data-toggle="popover" data-placement="top" data-content="Copied!">Copy</button>
+        </div>
+        <% code("html") do %>
+        <ul class="nav tabs-underlined" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a class="active tab-underlined" id="home-tab" data-toggle="tab" href="#home_new" role="tab" aria-controls="home" aria-selected="true">Bookings</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="tab-underlined" id="profile-tab" data-toggle="tab" href="#profile_new" role="tab" aria-controls="profile" aria-selected="false">Requests</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="tab-underlined" id="contact-tab" data-toggle="tab" href="#contact_new" role="tab" aria-controls="contact" aria-selected="false">Conversations</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade py-3 show active" id="home_new" role="tabpanel" aria-labelledby="home-tab">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat commodi iure adipisci? Non a ratione similique laudantium beatae harum ex corporis aut sequi officiis vero labore quia illo, deleniti fuga?
+          </div>
+          <div class="tab-pane fade py-3" id="profile_new" role="tabpanel" aria-labelledby="profile-tab">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia perspiciatis, placeat quibusdam minima quam, labore dolorem nam sequi tempore fugiat voluptas cum quod molestias nemo quae itaque est voluptatibus perferendis?
+          </div>
+          <div class="tab-pane fade py-3  " id="contact_new" role="tabpanel" aria-labelledby="contact-tab">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem quas ipsa nihil iure dicta perferendis ullam dolorem, distinctio eveniet ad voluptatem magnam illo quam quod dignissimos, repudiandae cum eos similique.
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
