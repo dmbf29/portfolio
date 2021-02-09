@@ -23,30 +23,30 @@
     - rails
     - css
 
-- title: Passing variables into partials
-  filename: tabs.html
-  tags:
-    - rails
+# - title: Passing variables into partials
+#   filename: tabs.html
+#   tags:
+#     - rails
 
-- title: Seeding with fake user images
-  filename: tabs.html
-  tags:
-    - rails
+# - title: Seeding with fake user images
+#   filename: tabs.html
+#   tags:
+#     - rails
 
-- title: Form with nested resources
-  filename: tabs.html
-  tags:
-    - rails
-    - simple_form
+# - title: Form with nested resources
+#   filename: tabs.html
+#   tags:
+#     - rails
+#     - simple_form
 
-- title: Building a photo grid
-  filename: tabs.html
-  tags:
-    - html
-    - css
-    - rails
+# - title: Building a photo grid
+#   filename: tabs.html
+#   tags:
+#     - html
+#     - css
+#     - rails
 
-- title: Routing for bookings. Customer vs. Owner
-  filename: tabs.html
-  tags:
-    - rails
+# - title: Routing for bookings. Customer vs. Owner
+#   filename: tabs.html
+#   tags:
+#     - rails
