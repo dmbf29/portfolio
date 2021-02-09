@@ -1,3 +1,9 @@
+- title: How to approve and reject a booking
+  filename: booking_status.html
+  tags:
+    - rails
+    - css
+
 - title: Making an entire card clickable
   filename: clickable_card.html
   tags:
@@ -16,12 +22,6 @@
   filename: conditional_navbar.html
   tags:
     - rails
-
-- title: Buttons to change the status of a booking
-  filename: booking_status.html
-  tags:
-    - rails
-    - css
 
 # - title: Passing variables into partials
 #   filename: tabs.html
