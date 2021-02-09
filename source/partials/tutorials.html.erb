@@ -6,14 +6,16 @@
         <p>Collection of features I found myself coming back to.</p>
         <ul class='pl-3'>
           <% data.tutorials.each do |tutorial| %>
-            <li class='d-flex ul-title'>
+            <div class="d-flex ul-title">
+            <li class='d-flex'>
               - <%= link_to tutorial.title, "/tutorials/#{tutorial.filename}" %>
-              <div class="d-flex ml-2">
+            </li>
+            <div class="d-flex">
                 <% tutorial.tags.each do |tag| %>
                   <span class='tutorial-tag'><%= tag %></span>
                 <% end %>
-              </div>
-            </li>
+            </div>
+            </div>
           <% end %>
         </ul>
       </div>
