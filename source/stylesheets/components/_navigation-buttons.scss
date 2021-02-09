@@ -41,3 +41,11 @@
 .nav-arrow {
   font-size: 32px;
 }
+
+.link-gray {
+  color: $normal-gray;
+  &:hover {
+    text-decoration: none;
+    color: $dark-gray;
+  }
+}

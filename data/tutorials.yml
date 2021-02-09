@@ -10,6 +10,13 @@
   tags:
     - rails
 
+- title: Making an entire card clickable
+  filename: clickable_card.html
+  tags:
+    - html
+    - css
+    - rails
+
 - title: Buttons to change the status of a booking
   filename: tabs.html
   tags:
