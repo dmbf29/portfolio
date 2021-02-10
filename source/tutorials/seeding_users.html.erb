@@ -25,15 +25,52 @@
       </div>
 
       <div class="tutorial-section">
+        Don't forget to add the gem into your <code>Gemfile</code>.
+        <div class="code-wrapper">
+          <% code('ruby') do %>
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+          <% end %>
+        </div>
+      </div>
+
+      <div class="tutorial-section">
         <h3 class='small-h3-header'>Attaching a Photo</h3>
         <p>So we've already seen how to attach a photo to an instance in our seeds:</p>
-        <% code('ruby') do %>
+        <div class="code-wrapper">
+          <% code('ruby') do %>
 require "open-uri"
 
 file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
 article = Article.new(title: 'NES', body: "A great console")
 article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-        <% end %>
+          <% end %>
+        </div>
+        <p>But, that's only one photo on one instance of an <code>article</code>. How can we generate a unique photo for each user that we seed in the database? We can user <%= link_to 'thispersondoesnotexist.com',
+        'https://thispersondoesnotexist.com/', class: 'link-gray', target: '_blank' %>. This website uses AI to generate photos of fake people.
+        </p>
+      </div>
+
+      <div class="tutorial-section">
+        So let's attach those AI photos to our users:
+        <div class="code-wrapper">
+          <% code('ruby') do %>
+require 'open-uri'
+
+50.times do
+  file = URI.open('https://thispersondoesnotexist.com/image')
+  user = Upload.create!(
+    email: Faker::Internet.safe_email,
+    password: '123123', # needs to be 6 digits,
+    # add any additional attributes you have on your model
+  )
+  user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+end
+          <% end %>
+        </div>
+      </div>
+
+      <div class="tutorial-section">
+        <h3 class='small-h3-header'>Crash Test your User</h3>
       </div>
 
     </div>
