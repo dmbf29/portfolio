@@ -70,7 +70,19 @@ end
       </div>
 
       <div class="tutorial-section">
-        <h3 class='small-h3-header'>Crash Test your User</h3>
+        <h3 class='small-h3-header'>Make Sure They Attached</h3>
+        <p>Go to your Terminal and open up a <code>rails c</code></p>
+        <div class="code-wrapper">
+          <% code('shell') do %>
+rails c
+          <% end %>
+        </div>
+        <p>Pull up the last user and make sure a photo is attached</p>
+        <div class="code-wrapper">
+          <% code('ruby') do %>
+User.last.photo.attached? # if true, success!
+          <% end %>
+        </div>
       </div>
 
     </div>

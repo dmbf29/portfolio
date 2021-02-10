@@ -23,10 +23,11 @@
   tags:
     - rails
 
-- title: Seeding with fake users (w/images)
+- title: Seeding fake users (w/images)
   filename: seeding_users.html
   tags:
     - rails
+    - activestorage
 
 # - title: Passing variables into partials
 #   filename: tabs.html
