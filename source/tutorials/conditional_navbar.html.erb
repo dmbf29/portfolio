@@ -3,9 +3,9 @@
   <%= image_tag "face.jpg", alt: "doug_photo", class: 'avatar-small-square ml-3' %>
   <%= link_to '', '/#tutorials', class: 'nav-group-link'  %>
 </div>
-<div class="col-12 container mt-3 mb-5">
+<div class="container mt-3 mb-5">
   <div class="row">
-    <div class="small-container">
+    <div class="col-12 small-container">
       <h1 class='small-h1-header'>Conditional Navbar</h1>
       <p class='m-0'><em>Using a conditional to only display the navbar on specific pages</em></p>
 
@@ -15,12 +15,14 @@
       </div>
 
       <div class="tutorial-section">
+        <div class="code-wrapper">
         <% code("ruby") do %>
-          # app/controllers/pages_controller.rb
-          def home
-            raise
-          end
+# app/controllers/pages_controller.rb
+def home
+  raise
+end
         <% end %>
+        </div>
       </div>
 
       <div class="tutorial-section">
@@ -40,32 +42,36 @@
 
       <div class="tutorial-section">
         <h5 class='small-h5-header'>1. Removing navbar on landing page</h5>
+        <div class="code-wrapper">
         <% code("erb") do %>
-          # app/view/layouts/application.html.erb
-          # ...
-          <body>
-            <%% unless params[:controller] == 'pages' && params[:action] == 'home' %>
-              <%%= render 'shared/navbar' %>
-            <%% end %>
-            <%%= yield %>
-            ...
+# app/view/layouts/application.html.erb
+# ...
+<body>
+  <%% unless params[:controller] == 'pages' && params[:action] == 'home' %>
+    <%%= render 'shared/navbar' %>
+  <%% end %>
+  <%%= yield %>
+  ...
         <% end %>
+        </div>
       </div>
 
       <div class="tutorial-section">
         <h5 class='small-h5-header'>2. Display a different navbar for a signed in user (w/Devise)</h5>
+        <div class="code-wrapper">
         <% code("erb") do %>
-          # app/view/layouts/application.html.erb
-          # ...
-          <body>
-            <%% if user_signed_in? %>
-              <%%= render 'shared/user_navbar' %>
-            <%% else  %>
-              <%%= render 'shared/default_navbar' %>
-            <%% end %>
-            <%%= yield %>
-            ...
+# app/view/layouts/application.html.erb
+# ...
+<body>
+  <%% if user_signed_in? %>
+    <%%= render 'shared/user_navbar' %>
+  <%% else  %>
+    <%%= render 'shared/default_navbar' %>
+  <%% end %>
+  <%%= yield %>
+  ...
         <% end %>
+        </div>
       </div>
     </div>
   </div>
