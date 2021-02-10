@@ -3,9 +3,9 @@
   <%= image_tag "face.jpg", alt: "doug_photo", class: 'avatar-small-square ml-3' %>
   <%= link_to '', '/#tutorials', class: 'nav-group-link'  %>
 </div>
-<div class="col-12 container mt-3 mb-5">
+<div class="container mt-3 mb-5">
   <div class="row">
-    <div class="small-container">
+    <div class="col-12 small-container">
       <h1 class='small-h1-header'>Building tabs with style</h1>
       <p class='m-0'><em>Combining function with style</em></p>
 
@@ -98,32 +98,34 @@
           <h3 class='small-h3-header'>The SCSS</h3>
           <button type='button' class='btn btn-dark btn-copy' data-container="body" data-toggle="popover" data-placement="top" data-content="Copied!">Copy</button>
         </div>
+        <div class="code-wrapper">
         <% code("scss") do %>
-          .tabs-underlined {
-            display: flex;
-            align-items: center;
-          }
+.tabs-underlined {
+  display: flex;
+  align-items: center;
+}
 
-          .tabs-underlined {
-            .tab-underlined {
-              color: black;
-              padding: 8px;
-              margin: 8px 16px;
-              opacity: .4;
-              cursor: pointer;
-              text-decoration: none;
-              border-bottom: 4px solid transparent;
-              display: block;
-            }
-            .tab-underlined:hover {
-              opacity: 0.5;
-            }
-            .tab-underlined.active {
-              opacity: 1;
-              border-bottom: 3px solid #555555;
-            }
-          }
+.tabs-underlined {
+  .tab-underlined {
+    color: black;
+    padding: 8px;
+    margin: 8px 16px;
+    opacity: .4;
+    cursor: pointer;
+    text-decoration: none;
+    border-bottom: 4px solid transparent;
+    display: block;
+  }
+  .tab-underlined:hover {
+    opacity: 0.5;
+  }
+  .tab-underlined.active {
+    opacity: 1;
+    border-bottom: 3px solid #555555;
+  }
+}
         <% end %>
+        </div>
       </div>
 
       <div class="tutorial-section">
@@ -131,30 +133,32 @@
           <h3 class='small-h3-header'>The HTML</h3>
           <button type='button' class='btn btn-dark btn-copy' data-container="body" data-toggle="popover" data-placement="top" data-content="Copied!">Copy</button>
         </div>
+        <div class="code-wrapper">
         <% code("html") do %>
-        <ul class="nav tabs-underlined" id="myTab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <a class="active tab-underlined" id="home-tab" data-toggle="tab" href="#home_new" role="tab" aria-controls="home" aria-selected="true">Bookings</a>
-          </li>
-          <li class="nav-item" role="presentation">
-            <a class="tab-underlined" id="profile-tab" data-toggle="tab" href="#profile_new" role="tab" aria-controls="profile" aria-selected="false">Requests</a>
-          </li>
-          <li class="nav-item" role="presentation">
-            <a class="tab-underlined" id="contact-tab" data-toggle="tab" href="#contact_new" role="tab" aria-controls="contact" aria-selected="false">Conversations</a>
-          </li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade py-3 show active" id="home_new" role="tabpanel" aria-labelledby="home-tab">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat commodi iure adipisci? Non a ratione similique laudantium beatae harum ex corporis aut sequi officiis vero labore quia illo, deleniti fuga?
-          </div>
-          <div class="tab-pane fade py-3" id="profile_new" role="tabpanel" aria-labelledby="profile-tab">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia perspiciatis, placeat quibusdam minima quam, labore dolorem nam sequi tempore fugiat voluptas cum quod molestias nemo quae itaque est voluptatibus perferendis?
-          </div>
-          <div class="tab-pane fade py-3  " id="contact_new" role="tabpanel" aria-labelledby="contact-tab">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem quas ipsa nihil iure dicta perferendis ullam dolorem, distinctio eveniet ad voluptatem magnam illo quam quod dignissimos, repudiandae cum eos similique.
-          </div>
-        </div>
+<ul class="nav tabs-underlined" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="active tab-underlined" id="home-tab" data-toggle="tab" href="#home_new" role="tab" aria-controls="home" aria-selected="true">Bookings</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="tab-underlined" id="profile-tab" data-toggle="tab" href="#profile_new" role="tab" aria-controls="profile" aria-selected="false">Requests</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="tab-underlined" id="contact-tab" data-toggle="tab" href="#contact_new" role="tab" aria-controls="contact" aria-selected="false">Conversations</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade py-3 show active" id="home_new" role="tabpanel" aria-labelledby="home-tab">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat commodi iure adipisci? Non a ratione similique laudantium beatae harum ex corporis aut sequi officiis vero labore quia illo, deleniti fuga?
+  </div>
+  <div class="tab-pane fade py-3" id="profile_new" role="tabpanel" aria-labelledby="profile-tab">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia perspiciatis, placeat quibusdam minima quam, labore dolorem nam sequi tempore fugiat voluptas cum quod molestias nemo quae itaque est voluptatibus perferendis?
+  </div>
+  <div class="tab-pane fade py-3  " id="contact_new" role="tabpanel" aria-labelledby="contact-tab">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem quas ipsa nihil iure dicta perferendis ullam dolorem, distinctio eveniet ad voluptatem magnam illo quam quod dignissimos, repudiandae cum eos similique.
+  </div>
+</div>
         <% end %>
+        </div>
       </div>
     </div>
   </div>
