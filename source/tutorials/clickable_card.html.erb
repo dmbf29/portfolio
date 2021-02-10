@@ -3,9 +3,9 @@
   <%= image_tag "face.jpg" , alt: "doug_photo" , class: 'avatar-small-square ml-3' %>
     <%= link_to '' , '/#tutorials' , class: 'nav-group-link' %>
 </div>
-<div class="col-12 container mt-3 mb-5">
+<div class="container mt-3 mb-5">
   <div class="row">
-    <div class="small-container">
+    <div class="col-12 small-container">
       <h1 class='small-h1-header'>Make a Card Clickable</h1>
       <p class='m-0'><em>Nesting an entire card inside of a link</em></p>
 
@@ -38,17 +38,21 @@
 
       <div class="tutorial-section">
         <p>Let's see what happens when we wrap the same code inside of  an <code>anchor</code> tag.</p>
+        <div class="code-wrapper">
         <% code('html') do %>
-          <a href="#">
-            <!-- card html -->
-          </a>
+<a href="#">
+  <!-- card html -->
+</a>
         <% end %>
+        </div>
         <p>Or the Rails way...</p>
+        <div class="code-wrapper">
         <% code('erb') do %>
-          <%%= link_to card_path do %>
-            <!-- card html -->
-          <%% end %>
+<%%= link_to card_path do %>
+  <!-- card html -->
+<%% end %>
         <% end %>
+        </div>
       </div>
 
       <% link_to '#' do %>
@@ -75,22 +79,28 @@
         <p>This might seem strange at first, but we're not going to wrap the card in the link. We're going three dimensional here. We're going to place the link <em>over the card.</em></p>
         <br>
         <p><strong>First:</strong> we build a link <strong>inside of our card</strong> with no text inside of our link to display. Let's also create a new class called <code>card-link</code></p>
+        <div class="code-wrapper">
         <% code('html') do %>
-          <a href="#" class='card-link'></a>
+<a href="#" class='card-link'></a>
         <% end %>
+        </div>
         <p>Or the Rails way...</p>
+        <div class="code-wrapper">
         <% code('erb') do %>
-          <%%= link_to '', card_path, class: 'card-link'  %>
+<%%= link_to '', card_path, class: 'card-link'  %>
         <% end %>
+        </div>
         <p><strong>Second:</strong> we make our card <code>position: relative</code>, then we can make our link <code>position: absolute</code></p>
         <br>
         <p><strong>Third:</strong> we stretch the link over the entirety of the card. Our link won't take up an space, so we have to give it some special css attributes. Pin it to the corners then stretch over the entire width like this: </p>
+        <div class="code-wrapper">
         <% code('css') do %>
-          top: 0;
-          bottom: 0;
-          left: 0;
-          width: 100%;
+top: 0;
+bottom: 0;
+left: 0;
+width: 100%;
         <% end %>
+        </div>
         <p id='code'>Now we have a clickable card that looks like our original:</p>
       </div>
       <div class="card-trip">
@@ -111,56 +121,58 @@
           <h3 class='small-h3-header'>The CSS</h3>
           <button type='button' class='btn btn-dark btn-copy' data-container="body" data-toggle="popover" data-placement="top" data-content="Copied!">Copy</button>
         </div>
+        <div class="code-wrapper">
         <% code("css") do %>
-          .card-trip {
-            overflow: hidden;
-            background: white;
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
-            position: relative; // NEEDED FOR THE LINK
-          }
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative; // NEEDED FOR THE LINK
+}
 
-          .card-trip > img {
-            height: 200px;
-            width: 100%;
-            object-fit: cover;
-          }
+.card-trip > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
 
-          .card-trip h2 {
-            font-size: 16px;
-            font-weight: bold;
-            margin: 0;
-          }
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
 
-          .card-trip p {
-            font-size: 12px;
-            opacity: .7;
-            margin: 0;
-          }
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
 
-          .card-trip .card-trip-infos {
-            padding: 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            position: relative;
-          }
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
 
-          .card-trip-infos .card-trip-user {
-            position: absolute;
-            right: 16px;
-            top: -20px;
-            width: 40px;
-          }
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
 
-          // To stretch the link on top of the card div
-          .card-link {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-          }
+// To stretch the link on top of the card div
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
         <% end %>
+        </div>
       </div>
 
       <div class="tutorial-section">
@@ -168,21 +180,23 @@
           <h3 class='small-h3-header'>The ERB Way</h3>
           <button type='button' class='btn btn-dark btn-copy' data-container="body" data-toggle="popover" data-placement="top" data-content="Copied!">Copy</button>
         </div>
+        <div class="code-wrapper">
         <% code("erb") do %>
-          <div class="card-trip">
-            <%%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" %>
-            <div class="card-trip-infos">
-              <div>
-                <h2>Title here</h2>
-                <p>Short description here!</p>
-              </div>
-              <h2 class="card-trip-pricing">£99.99</h2>
-              <%%= image_tag "https://kitt.lewagon.com/placeholder/users/dmbf29", class: "card-trip-user avatar-bordered" %>
-            </div>
-            <%%= link_to '', card_path(element), class: 'card-link'  %>
-            <!-- You need to replace card_path with your appropriate route  -->
-          </div>
+<div class="card-trip">
+  <%%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" %>
+  <div class="card-trip-infos">
+    <div>
+      <h2>Title here</h2>
+      <p>Short description here!</p>
+    </div>
+    <h2 class="card-trip-pricing">£99.99</h2>
+    <%%= image_tag "https://kitt.lewagon.com/placeholder/users/dmbf29", class: "card-trip-user avatar-bordered" %>
+  </div>
+  <%%= link_to '', card_path(element), class: 'card-link'  %>
+  <!-- You need to replace card_path with your appropriate route  -->
+</div>
         <% end %>
+        </div>
       </div>
 
       <div class="tutorial-section">
@@ -190,21 +204,23 @@
           <h3 class='small-h3-header'>The Pure HTML way</h3>
           <button type='button' class='btn btn-dark btn-copy' data-container="body" data-toggle="popover" data-placement="top" data-content="Copied!">Copy</button>
         </div>
+        <div class="code-wrapper">
         <% code("html") do %>
-          <div class="card-trip">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-            <div class="card-trip-infos">
-              <div>
-                <h2>Title here</h2>
-                <p>Short description here!</p>
-              </div>
-              <h2 class="card-trip-pricing">£99.99</h2>
-              <img src="https://kitt.lewagon.com/placeholder/users/dmbf29" class="card-trip-user avatar-bordered" />
-            </div>
-            <a href="#" class='card-link'></a>
-            <!-- You need to replace the href # with your appropriate route -->
-          </div>
+<div class="card-trip">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <h2>Title here</h2>
+      <p>Short description here!</p>
+    </div>
+    <h2 class="card-trip-pricing">£99.99</h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/dmbf29" class="card-trip-user avatar-bordered" />
+  </div>
+  <a href="#" class='card-link'></a>
+  <!-- You need to replace the href # with your appropriate route -->
+</div>
         <% end %>
+        </div>
       </div>
     </div>
   </div>
