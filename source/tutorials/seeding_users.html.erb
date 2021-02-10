@@ -1,0 +1,41 @@
+<div class="nav-group">
+  <i class="fas fa-chevron-left font-bold"></i>
+  <%= image_tag "face.jpg", alt: "doug_photo", class: 'avatar-small-square ml-3' %>
+  <%= link_to '', '/#tutorials', class: 'nav-group-link'  %>
+</div>
+<div class="col-12 container mt-3 mb-5">
+  <div class="row">
+    <div class="small-container">
+      <h1 class='small-h1-header'>Seeding Users with Photos</h1>
+      <p class='m-0'><em>How to add an emails and user photo with ActiveStorage</em></p>
+
+      <div class="tutorial-section">
+        <p>When starting a new project, adding seeds gives life to your application. It gives you some initial data to play around with and adding users is normally an integral part of it. They tricky part is that we want it to feel real without actually using people's photos or information.
+        </p>
+      </div>
+
+      <div class="tutorial-section">
+        <h3 class='small-h3-header'>Using Faker</h3>
+        <p>I'm going to assume that we're using Devise for our <code>User</code> model. That means we'll most likely be logging in with an email. I'm a big fan of the gem <%= link_to "Faker", 'https://github.com/faker-ruby/faker', class: 'link-gray', target: '_blank' %>, but you have to be careful with this one. Some of their emails are real. The last thing you want to do is accidentally email all of those <code>@gmail.com</code> addresses you seeded into your database.
+        </p>
+      </div>
+
+      <div class="tutorial-section">
+        If you use <code>Faker::Internet.safe_email</code>, then it'll guarantee you're using an email address that <strong>can't</strong> receive messages (ie: <code>"margert_huel@example.net</code>). To counteract the <code>@example.com</code>, I like to use the real emails of the other members in my team. This allows them to always know an email they can sign in with. Otherwise every time you run your seeds, you'll have to open the Rails console and find a new users's email.
+      </div>
+
+      <div class="tutorial-section">
+        <h3 class='small-h3-header'>Attaching a Photo</h3>
+        <p>So we've already seen how to attach a photo to an instance in our seeds:</p>
+        <% code('ruby') do %>
+require "open-uri"
+
+file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+article = Article.new(title: 'NES', body: "A great console")
+article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>

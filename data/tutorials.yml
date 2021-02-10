@@ -23,12 +23,12 @@
   tags:
     - rails
 
-# - title: Passing variables into partials
-#   filename: tabs.html
-#   tags:
-#     - rails
+- title: Seeding with fake users (w/images)
+  filename: seeding_users.html
+  tags:
+    - rails
 
-# - title: Seeding with fake user images
+# - title: Passing variables into partials
 #   filename: tabs.html
 #   tags:
 #     - rails
