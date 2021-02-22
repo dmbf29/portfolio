@@ -150,10 +150,11 @@ end
         <div class="code-wrapper">
           <% code('erb') do %>
 <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%%= cocktail.photo.attached? ? (cl_image_path cocktail.photo.key) : "http://loremflickr.com/300/260/cocktail" %>)">
-  <%= cocktail.name %>
+  <%%= cocktail.name %>
 </div>
           <% end %>
         </div>
+        <p><%= link_to "Link to the CSS", "https://uikit.lewagon.com/documentation#card_category", target: "_blank", class: "link-gray" %></p>
       </div>
 
       <div class="tutorial-section">
