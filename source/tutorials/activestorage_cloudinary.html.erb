@@ -1,4 +1,4 @@
-<% set_meta_tags(project_name: 'Setting up ActiveStorage and Cloudinary', title: 'Setting up ActiveStorage and Cloudinary', description: 'How to build accept/reject buttons for a booking')  %>
+<% set_meta_tags(project_name: 'Setting up ActiveStorage and Cloudinary', title: 'Setting up ActiveStorage and Cloudinary', description: 'How to install ActiveStorage and upload to Cloudinary')  %>
 <div class="nav-group">
   <i class="fas fa-chevron-left font-bold"></i>
   <%= image_tag "face.jpg" , alt: "doug_photo" , class: 'avatar-small-square ml-3' %>
@@ -109,6 +109,7 @@ config.active_storage.service = :cloudinary
       <div class="tutorial-section">
         <h3 class='small-h3-header'>Attaching a photo to a model</h3>
         <p>This will allow users to upload a photo to our model.</p>
+        <p>Make sure you've restart your Rails server.</p>
         <div class="code-wrapper">
           <% code('ruby') do %>
 class Cocktail < ApplicationRecord
@@ -137,7 +138,41 @@ end
         </div>
       </div>
 
+      <div class="tutorial-section">
+        <h3 class='small-h3-header'>Using the image in the view</h3>
+        <p>This can be tricky so you need to be careful. There's two different ways we can use the new images</p>
+        <p><code>cl_image_tag</code> builds an <code>img</code> tag.</p>
+        <p><code>cl_image_path</code> builds a url <code>"https://res.cloudinary.com/..."</code></p>
+      </div>
 
+      <div class="tutorial-section">
+        <p><strong>Adding a photo as a background image</strong></p>
+        <div class="code-wrapper">
+          <% code('erb') do %>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%%= cocktail.photo.attached? ? (cl_image_path cocktail.photo.key) : "http://loremflickr.com/300/260/cocktail" %>)">
+  Breakfast
+</div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="tutorial-section">
+        <p><strong>Adding a photo as an image</strong></p>
+        <div class="code-wrapper">
+          <% code('erb') do %>
+<%% if cocktail.photo.attached? %>
+  <%%= cl_image_tag cocktail.photo.key, alt: "cocktail image", class: 'anthing_you_want' %>
+<%% else %>
+  <%%= image_tag "http://loremflickr.com/300/260/cocktail", alt: "cocktail image", class: 'anthing_you_want' %>
+<%% end %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="tutorial-section">
+        <h3 class='small-h3-header'>Active Storage Validations</h3>
+        <p>If you want to require your user to upload an image, you can follow the <%= link_to "Active Storage Validations gem", "https://github.com/igorkasyanchuk/active_storage_validations#active-storage-validations", targer: "_blank", class: 'link-gray' %> setup.</p>
+      </div>
     </div>
   </div>
 </div>
