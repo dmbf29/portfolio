@@ -80,12 +80,13 @@ rails db:migrate
       </div>
 
       <div class="tutorial-section">
-        <p>Now for the config files. Be careful, there are three separate ones.</p>
+        <p>Now for the config files. Make sure you're in the correct file, there are three.</p>
         <div class="code-wrapper">
           <% code('yaml') do %>
 # config/storage.yml
 cloudinary:
   service: Cloudinary
+# You can remove everything else in this file.
           <% end %>
         </div>
         <p>Replace <code>:local</code> by <code>:cloudinary</code> in the config.</p>
