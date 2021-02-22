@@ -150,7 +150,7 @@ end
         <div class="code-wrapper">
           <% code('erb') do %>
 <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%%= cocktail.photo.attached? ? (cl_image_path cocktail.photo.key) : "http://loremflickr.com/300/260/cocktail" %>)">
-  Breakfast
+  <%= cocktail.name %>
 </div>
           <% end %>
         </div>
