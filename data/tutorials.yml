@@ -29,6 +29,13 @@
     - rails
     - activestorage
 
+- title: Setting up ActiveStorage and Cloudinary
+  filename: activestorage_cloudinary.html
+  tags:
+    - rails
+    - activestorage
+    - cloudinary
+
 # - title: Passing variables into partials
 #   filename: tabs.html
 #   tags:

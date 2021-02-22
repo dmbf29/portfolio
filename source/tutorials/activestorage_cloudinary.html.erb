@@ -1,0 +1,152 @@
+<% set_meta_tags(project_name: 'Setting up ActiveStorage and Cloudinary', title: 'Setting up ActiveStorage and Cloudinary', description: 'How to build accept/reject buttons for a booking')  %>
+<div class="nav-group">
+  <i class="fas fa-chevron-left font-bold"></i>
+  <%= image_tag "face.jpg" , alt: "doug_photo" , class: 'avatar-small-square ml-3' %>
+    <%= link_to '' , '/#tutorials' , class: 'nav-group-link' %>
+</div>
+<div class="container mt-3 mb-5">
+  <div class="row">
+    <div class="col-12 small-container">
+      <h1 class='small-h1-header'>Setting up ActiveStorage and Cloudinary</h1>
+      <p class='m-0'><em>How to install ActiveStorage and upload to Cloudinary</em></p>
+
+      <div class="tutorial-section">
+        <p>There are a lot of steps (and copying and pasting) in order to setup ActiveStorage and Cloudinary in your Rails application. Let's try to do it together.
+        </p>
+      </div>
+
+      <div class="tutorial-section">
+        <h3 class='small-h3-header'>Adding the Gems</h3>
+        <p>We'll need a place to put our Cloudinary API key since we don't want to push it to Github. We're going to use the gem <code>dotenv-rails</code> for this. So let's add that and Cloudinary to our Gemfile.</p>
+        <div class="code-wrapper">
+          <% code('ruby') do %>
+# Gemfile
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.16.0'
+          <% end %>
+        </div>
+      </div>
+
+      <div class="tutorial-section">
+        <p>Since we changed our <code>Gemfile</code>, we need to <code>bundle install</code>. We'll also need to create the <code>.env</code> file and add it into our <code>.gitignore</code>. Let's copy and paste this in your Terminal.</p>
+        <div class="code-wrapper">
+          <% code('shell') do %>
+bundle install
+touch .env
+echo '.env*' >> .gitignore
+          <% end %>
+        </div>
+      </div>
+
+      <div class="tutorial-section pb-0">
+        <h3 class='small-h3-header'>Providing your API keys</h3>
+      </div>
+
+      <div class="tutorial-section">
+        <div class="d-flex justify-content-center">
+          <%= image_tag 'tutorials/cloudinary_env.png', width: '100%' %>
+        </div>
+      </div>
+
+      <div class="tutorial-section">
+        <p>Let's go to your <%= link_to "Cloudinary console", "https://cloudinary.com/console", target: "_blank", class: 'link-gray'  %> to get your <strong>API environment variable</strong>. Copy it and paste it into *your* <code>.env</code> file.</p>
+        <div class="code-wrapper">
+          <% code('ruby') do %>
+# .env
+CLOUDINARY_URL=cloudinary://298522699261255:Qa1ZfO4syfbOC-***********************8
+          <% end %>
+        </div>
+      </div>
+
+      <div class="tutorial-section">
+        <p>While we're setting the secret key, let's not forget to let Heroku know as well. Let's paste our <code>CLOUDINARY_URL</code> in the Terminal.
+        </p>
+        <div class="code-wrapper">
+          <% code('shell') do %>
+heroku config:set CLOUDINARY_URL=cloudinary://298....
+          <% end %>
+        </div>
+      </div>
+
+      <div class="tutorial-section">
+        <h3 class='small-h3-header'>Installing ActiveStorage</h3>
+        <p>There's a lot of "magic" happening behind the scenees with ActiveStorage. It order for it to work, it needs a bit of configuration so be careful with the copy and pasting here. First, the migrations</p>
+        <div class="code-wrapper">
+          <% code('shell') do %>
+rails active_storage:install
+rails db:migrate
+          <% end %>
+        </div>
+      </div>
+
+      <div class="tutorial-section">
+        <p>Now for the config files. Be careful, there are three separate ones.</p>
+        <div class="code-wrapper">
+          <% code('yaml') do %>
+# config/storage.yml
+cloudinary:
+  service: Cloudinary
+          <% end %>
+        </div>
+        <p>Replace <code>:local</code> by <code>:cloudinary</code> in the config.</p>
+        <p>⚠️ <strong>Make sure you do not have this line twice.</strong></p>
+        <div class="code-wrapper">
+          <% code('ruby') do %>
+# config/environments/development.rb
+config.active_storage.service = :cloudinary
+          <% end %>
+        </div>
+
+        <p>And also in the production file</p>
+        <div class="code-wrapper">
+          <% code('ruby') do %>
+# config/environments/production.rb
+config.active_storage.service = :cloudinary
+          <% end %>
+        </div>
+      </div>
+
+      <div class="tutorial-section">
+        <h3 class='small-h3-header'>Attaching a photo to a model</h3>
+        <p>This will allow users to upload a photo to our model.</p>
+        <div class="code-wrapper">
+          <% code('ruby') do %>
+class Cocktail < ApplicationRecord
+  has_one_attached :photo
+end
+          <% end %>
+        </div>
+        <p>Now for the form and strong parameters.</p>
+        <div class="code-wrapper">
+          <% code('erb') do %>
+<!-- app/views/cocktails/_form.html.erb -->
+<%%= simple_form_for @cocktail do |f| %>
+  <!-- [...] -->
+  <%%= f.input :photo, as: :file %>
+  <!-- [...] -->
+<%% end %>
+          <% end %>
+        </div>
+        <div class="code-wrapper">
+          <% code('ruby') do %>
+# app/controllers/articles_controller.rb
+def cocktail_params
+  params.require(:cocktail).permit(:name, :photo)
+end
+          <% end %>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
