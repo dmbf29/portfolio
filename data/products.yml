@@ -78,16 +78,6 @@
     - devicon-html5-plain-wordmark
     - devicon-css3-plain
 
-- name: Gibbit
-  description: An online service that helps foreigners living abroad
-  image: gibbit.png
-  url:
-  tags:
-    - devicon-rails-plain-wordmark
-    - devicon-postgresql-plain-wordmark
-    - devicon-heroku-original
-    - devicon-javascript-plain
-
 - name: Yahtzee Online
   description: Play Yahtzee online with your friends
   image: yahtzee.png
@@ -98,10 +88,10 @@
     - devicon-heroku-original
     - devicon-javascript-plain
 
-- name: Dave Beck Music
-  description: Events for a popular music act based in Seoul, Korea
-  image: davebeckmusic.png
-  url: https://dave-beck-music.herokuapp.com/
+- name: Gibbit
+  description: An online service that helps foreigners living abroad
+  image: gibbit.png
+  url:
   tags:
     - devicon-rails-plain-wordmark
     - devicon-postgresql-plain-wordmark
@@ -116,6 +106,16 @@
     - devicon-rails-plain-wordmark
     - devicon-postgresql-plain-wordmark
     - devicon-redis-plain-wordmark
+
+- name: Dave Beck Music
+  description: Events for a popular music act based in Seoul, Korea
+  image: davebeckmusic.png
+  url: https://dave-beck-music.herokuapp.com/
+  tags:
+    - devicon-rails-plain-wordmark
+    - devicon-postgresql-plain-wordmark
+    - devicon-heroku-original
+    - devicon-javascript-plain
 
 - name: Simpons Database
   description: A list of every Simpons character
