@@ -173,6 +173,20 @@ end
       </div>
 
       <div class="tutorial-section">
+        <h3 class='small-h3-header'>Attaching Photos in your seeds</h3>
+                <div class="code-wrapper">
+          <% code('ruby') do %>
+require "open-uri" # at the top
+
+30.times do
+  file = URI.open('http://loremflickr.com/300/260/cocktail')
+  cocktail = Cocktail.create!(name: 'SOMETHING_FROM_FAKER')
+  cocktail.photo.attach(io: file, filename: 'cocktail.png', content_type: 'image/png')
+end
+          <% end %>
+      </div>
+
+      <div class="tutorial-section">
         <h3 class='small-h3-header'>Active Storage Validations</h3>
         <p>If you want to require your user to upload an image, you can follow the <%= link_to "Active Storage Validations gem", "https://github.com/igorkasyanchuk/active_storage_validations#active-storage-validations", targer: "_blank", class: 'link-gray' %> setup.</p>
       </div>
