@@ -180,8 +180,8 @@ require "open-uri" # at the top
 
 puts 'Creating cocktails... (this could take a minute)'
 30.times do
-  file = URI.open('http://loremflickr.com/300/260/cocktail')
   cocktail = Cocktail.create!(name: 'SOMETHING_FROM_FAKER')
+  file = URI.open('http://loremflickr.com/300/260/cocktail')
   cocktail.photo.attach(io: file, filename: 'cocktail.png', content_type: 'image/png')
 end
 puts "...created #{Cocktail.count} cocktails"
