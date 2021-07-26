@@ -8,6 +8,16 @@
     - devicon-heroku-original
     - devicon-javascript-plain
 
+- name: Career Paths
+  description: Automatically generate Japan Post shipping labels
+  image: easylabel.png
+  url: https://apps.shopify.com/easy-label-japan-post
+  tags:
+    - devicon-rails-plain-wordmark
+    - devicon-postgresql-plain-wordmark
+    - devicon-heroku-original
+    - devicon-javascript-plain
+
 - name: Easy Rates
   description: Display shipping rates from Japan Post in your store
   image: easyrates.png
