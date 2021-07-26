@@ -26,7 +26,7 @@ yarn add owl.carousel
       </div>
 
       <div class="tutorial-section">
-      <h3 class='small-h3-header'>Configuring the package</h3>
+        <h3 class='small-h3-header'>Configuring the package</h3>
         <p>Now let's configure our JS for this package. Let's head to <code> javascript/packs/application.js</code></p>
         <p>There are two things we need to do here. First, let's import Owl Carousel</p>
         <div class="code-wrapper">
@@ -36,7 +36,8 @@ import 'owl.carousel';
           <% end %>
         </div>
         <p>Second, we need to activate the Owl Carousel in the same file. Be careful, with this one. You might already have the <code>document.addEventListener</code> if you created the app with the Le Wagon templates. If that's the case, don't duplicate it, add it to the existing one.</p>
-        <% code('javascript') do %>
+        <div class="code-wrapper">
+          <% code('javascript') do %>
 // be careful you *might* already have this listener
 document.addEventListener('turbolinks:load', () => {
   $('.owl-carousel').owlCarousel({
@@ -47,10 +48,10 @@ document.addEventListener('turbolinks:load', () => {
         items:1
        },
       600:{
-       items:3
+        items:3
        },
       1000: {
-          items: 5
+        items: 5
       }
      },
      nav: true,
@@ -58,6 +59,8 @@ document.addEventListener('turbolinks:load', () => {
    })
 });
           <% end %>
+        </div>
+        <p>Notice there are a few options can tweak in here. These are the default setting that I use. As you can see, you can choose the responsiveness and if you want the side arrows on your scrollable container.</p>
       </div>
 
       <div class="tutorial-section pb-0">
