@@ -31,11 +31,33 @@ yarn add owl.carousel
         <p>There are two things we need to do here. First, let's import Owl Carousel</p>
         <div class="code-wrapper">
           <% code('javascript') do %>
-bundle install
-touch .env
-echo '.env*' >> .gitignore
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel';
           <% end %>
         </div>
+        <p>Second, we need to activate the Owl Carousel in the same file. Be careful, with this one. You might already have the <code>document.addEventListener</code> if you created the app with the Le Wagon templates. If that's the case, don't duplicate it, add it to the existing one.</p>
+        <% code('javascript') do %>
+// be careful you *might* already have this listener
+document.addEventListener('turbolinks:load', () => {
+  $('.owl-carousel').owlCarousel({
+    loop: true,
+    margin: 10,
+    responsive:{
+      0:{
+        items:1
+       },
+      600:{
+       items:3
+       },
+      1000: {
+          items: 5
+      }
+     },
+     nav: true,
+     navText: ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"]
+   })
+});
+          <% end %>
       </div>
 
       <div class="tutorial-section pb-0">
