@@ -18,6 +18,13 @@
     - html
     - css
 
+- title: Side scrolling carousel (Netflix)
+  filename: carousel.html
+  tags:
+    - html
+    - js
+    - rails
+
 - title: Conditional navbar
   filename: conditional_navbar.html
   tags:
