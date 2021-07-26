@@ -93,8 +93,33 @@ module.exports = environment
 <%%= stylesheet_pack_tag 'application' %>
           <% end %>
         </div>
-        <p>Lastly, we can add some style to the navigation arrows <strong>if you kept them active in the configuration</strong>. Feel free to change as you see fit.</p>
+        <p>Lastly, we can add some style to the navigation arrows <strong>if you kept them active in the configuration</strong>. Feel free to change as you see fit. It's probably best to create a component in your </p>
+        <div class="code-wrapper">
+          <% code('scss') do %>
+// app/assets/stylesheets/components/carousel.scss
 
+.owl-carousel {
+  display: flex;
+  .owl-prev {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 90%;
+    font-size: 30px !important;
+  }
+  .owl-next {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 90%;
+    font-size: 30px !important;
+  }
+}
+.owl-item.active:hover {
+  cursor: grab;
+}
+          <% end %>
+        </div>
       </div>
 
       <div class="tutorial-section">
