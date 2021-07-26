@@ -123,154 +123,34 @@ module.exports = environment
       </div>
 
       <div class="tutorial-section">
-        <div class="d-flex justify-content-center">
-          <%= image_tag 'tutorials/cloudinary_env.png', width: '100%' %>
-        </div>
-      </div>
-
-      <div class="tutorial-section">
-        <p>Let's go to your <%= link_to "Cloudinary console", "https://cloudinary.com/console", target: "_blank", class: 'link-gray'  %> to get *your* <strong>API environment variable</strong>. Copy it and paste it into your <code>.env</code> file.</p>
-        <div class="code-wrapper">
-          <% code('ruby') do %>
-# .env
-CLOUDINARY_URL=cloudinary://298522699261255:Qa1ZfO4syfbOC-***********************8
-          <% end %>
-        </div>
-      </div>
-
-      <div class="tutorial-section">
-        <p>While we're setting the secret key, let's not forget to let Heroku know as well. Let's paste our <code>CLOUDINARY_URL</code> in the Terminal.
-        </p>
-        <div class="code-wrapper">
-          <% code('shell') do %>
-heroku config:set CLOUDINARY_URL=cloudinary://298....
-          <% end %>
-        </div>
-      </div>
-
-      <div class="tutorial-section">
-        <h3 class='small-h3-header'>Installing ActiveStorage</h3>
-        <p>There's a lot of "magic" happening behind the scenees with ActiveStorage. It order for it to work, it needs a bit of configuration so be careful with the copy and pasting here. First, the migrations</p>
-        <div class="code-wrapper">
-          <% code('shell') do %>
-rails active_storage:install
-rails db:migrate
-          <% end %>
-        </div>
-      </div>
-
-      <div class="tutorial-section">
-        <p>Now for the config files. Make sure you're in the correct file, there are three.</p>
-        <div class="code-wrapper">
-          <% code('yaml') do %>
-# config/storage.yml
-cloudinary:
-  service: Cloudinary
-# You can remove everything else in this file.
-          <% end %>
-        </div>
-        <p>Replace <code>:local</code> by <code>:cloudinary</code> in the config.</p>
-        <p>⚠️ <strong>Make sure you do not have this line twice.</strong></p>
-        <div class="code-wrapper">
-          <% code('ruby') do %>
-# config/environments/development.rb
-config.active_storage.service = :cloudinary
-          <% end %>
-        </div>
-
-        <p>And also in the production file</p>
-        <div class="code-wrapper">
-          <% code('ruby') do %>
-# config/environments/production.rb
-config.active_storage.service = :cloudinary
-          <% end %>
-        </div>
-      </div>
-
-      <div class="tutorial-section">
-        <h3 class='small-h3-header'>Attaching a photo to a model</h3>
-        <p>This will allow users to upload a photo to our model.</p>
+        <h3 class='small-h3-header'>Adding it to the view</h3>
+        <p>You need to add two classes to your parent container. The organization should look like this.</p>
         <p><strong>Make sure you've restarted your Rails server.</strong></p>
         <div class="code-wrapper">
-          <% code('ruby') do %>
-class Cocktail < ApplicationRecord
-  has_one_attached :photo
-end
-          <% end %>
-        </div>
-        <p>Now for the form and strong parameters.</p>
-        <div class="code-wrapper">
-          <% code('erb') do %>
-<!-- app/views/cocktails/_form.html.erb -->
-<%%= simple_form_for @cocktail do |f| %>
-  <!-- [...] -->
-  <%%= f.input :photo, as: :file %>
-  <!-- [...] -->
-<%% end %>
-          <% end %>
-        </div>
-        <div class="code-wrapper">
-          <% code('ruby') do %>
-# app/controllers/articles_controller.rb
-def cocktail_params
-  params.require(:cocktail).permit(:name, :photo)
-end
-          <% end %>
-        </div>
-      </div>
-
-      <div class="tutorial-section">
-        <h3 class='small-h3-header'>Using the image in the view</h3>
-        <p>This can be tricky so you need to be careful. There's two different ways we can use the new images</p>
-        <p><code>cl_image_tag</code> builds an <code>img</code> tag.</p>
-        <p><code>cl_image_path</code> builds a url <code>"https://res.cloudinary.com/..."</code></p>
-      </div>
-
-      <div class="tutorial-section">
-        <p><strong>Adding a photo as a background image</strong></p>
-        <div class="code-wrapper">
-          <% code('erb') do %>
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%%= cocktail.photo.attached? ? (cl_image_path cocktail.photo.key) : "http://loremflickr.com/300/260/cocktail" %>)">
-  <%%= cocktail.name %>
+          <% code('html') do %>
+<div class="owl-carousel owl-theme">
+  <div> Your Content </div>
+  <div> Your Content </div>
+  <div> Your Content </div>
+  <div> Your Content </div>
+  <div> Your Content </div>
+  <div> Your Content </div>
+  <div> Your Content </div>
 </div>
           <% end %>
         </div>
-        <p>Notice what went into the card <code>url</code>. We have a conditional to make sure there's a photo attached. <code>cocktail.photo.attached? ? truthy : falsy</code></p>
-        <p><%= link_to "Link to the CSS", "https://uikit.lewagon.com/documentation#card_category", target: "_blank", class: "link-gray" %></p>
-      </div>
-
-      <div class="tutorial-section">
-        <p><strong>Adding a photo as an image</strong></p>
+        <p>But really it's probably best to build your interation into a partial.</p>
         <div class="code-wrapper">
           <% code('erb') do %>
-<%% if cocktail.photo.attached? %>
-  <%%= cl_image_tag cocktail.photo.key, alt: "cocktail image", class: 'anthing_you_want' %>
-<%% else %>
-  <%%= image_tag "http://loremflickr.com/300/260/cocktail", alt: "cocktail image", class: 'anthing_you_want' %>
-<%% end %>
+<!-- app/views/XXXXXX/index.html.erb -->
+
+<div class="owl-carousel owl-theme">
+  <%% @lists.each do |list| %>
+    <%%= render 'lists/card', list: list %>
+  <%% end %>
+</div>
           <% end %>
         </div>
-      </div>
-
-      <div class="tutorial-section">
-        <h3 class='small-h3-header'>Attaching Photos in your seeds</h3>
-                <div class="code-wrapper">
-          <% code('ruby') do %>
-require "open-uri" # at the top
-
-puts 'Creating cocktails... (this could take a minute)'
-30.times do
-  cocktail = Cocktail.create!(name: 'SOMETHING_FROM_FAKER')
-  file = URI.open('http://loremflickr.com/300/260/cocktail')
-  cocktail.photo.attach(io: file, filename: 'cocktail.png', content_type: 'image/png')
-end
-puts "...created #{Cocktail.count} cocktails"
-          <% end %>
-      </div>
-
-      <div class="tutorial-section">
-        <h3 class='small-h3-header'>Active Storage Validations</h3>
-        <p>If you want to require your user to upload an image, you can follow the <%= link_to "Active Storage Validations gem", "https://github.com/igorkasyanchuk/active_storage_validations#active-storage-validations", targer: "_blank", class: 'link-gray' %> setup.</p>
       </div>
     </div>
   </div>
