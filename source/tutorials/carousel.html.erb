@@ -31,6 +31,7 @@ yarn add owl.carousel
         <p>There are two things we need to do here. First, let's import Owl Carousel</p>
         <div class="code-wrapper">
           <% code('javascript') do %>
+// javascript/packs/application.js
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel';
           <% end %>
@@ -61,10 +62,39 @@ document.addEventListener('turbolinks:load', () => {
           <% end %>
         </div>
         <p>Notice there are a few options can tweak in here. These are the default setting that I use. As you can see, you can choose the responsiveness and if you want the side arrows on your scrollable container.</p>
+        <br>
+        <p>Lastly, we need to attach jQuery to the window. I'm going under the assumption you've already installed jQuery for Bootstrap. Go to your <code>config/webpack/environment.js</code>. We need to add this line: <code>window.jQuery': 'jquery'</code>. It should look like this now:</p>
+        <div class="code-wrapper">
+          <% code('javascript') do %>
+// config/webpack/environment.js
+const { environment } = require('@rails/webpacker')
+
+const webpack = require('webpack')
+environment.plugins.prepend('Provide',
+  new webpack.ProvidePlugin({
+    $: 'jquery',
+    jQuery: 'jquery',
+    Popper: ['popper.js', 'default'],
+    'window.jQuery': 'jquery'
+  })
+)
+module.exports = environment
+          <% end %>
+        </div>
       </div>
 
       <div class="tutorial-section pb-0">
-        <h3 class='small-h3-header'>Providing your API keys</h3>
+        <h3 class='small-h3-header'>Adding the style</h3>
+        <p>Next, we need to make sure we're using the CSS that we were importing in our JS above. Let's head to our <code>app/views/layouts/application.html</code>. Let's add this into our <code>head</code></p>
+        <div class="code-wrapper">
+          <% code('erb') do %>
+<!-- app/views/layouts/application.html -->
+
+<%%= stylesheet_pack_tag 'application' %>
+          <% end %>
+        </div>
+        <p>Lastly, we can add some style to the navigation arrows <strong>if you kept them active in the configuration</strong>. Feel free to change as you see fit.</p>
+
       </div>
 
       <div class="tutorial-section">
