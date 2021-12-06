@@ -59,7 +59,7 @@
     - devicon-javascript-plain
 
 - name: Rick-Roll Detection
-  description: Chrome extension that warns of any Rick Astly link
+  description: Chrome extension that warns of any 'Never Gonna Give You Up' link
   image: rick_roll.png
   url:
   tags:
@@ -74,6 +74,16 @@
     - devicon-rails-plain-wordmark
     - devicon-postgresql-plain-wordmark
     - devicon-redis-plain-wordmark
+
+- name: Experience the End
+  description: Adventure service to book near death experiences.
+  image: experience_the_end.png
+  url: https://experience-the-end.herokuapp.com/
+  tags:
+    - devicon-rails-plain-wordmark
+    - devicon-postgresql-plain-wordmark
+    - devicon-heroku-original
+    - devicon-javascript-plain
 
 - name: Yahtzee Online
   description: Play Yahtzee online with your friends
