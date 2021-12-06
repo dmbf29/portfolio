@@ -108,7 +108,7 @@
 - name: Le Wagon Japan
   description: Comprehensive list of student projects
   image: lewagonjapan.png
-  url: https://le-wagon-tokyo.herokuapp.com/
+  url:
   tags:
     - devicon-slack-plain
     - devicon-rails-plain-wordmark
