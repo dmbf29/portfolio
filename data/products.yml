@@ -18,6 +18,18 @@
     - devicon-heroku-original
     - devicon-javascript-plain
 
+
+- name: Octacle
+  description: Sports prediction application
+  image: octacle.png
+  url: https://www.octacle.app/
+  tags:
+    - devicon-vuejs-plain-wordmark
+    - devicon-rails-plain-wordmark
+    - devicon-postgresql-plain-wordmark
+    - devicon-heroku-original
+    - devicon-javascript-plain
+
 - name: Advanced COD
   description: Cash on delivery app listed on the Shopify store
   image: advanced_cod.png
@@ -46,15 +58,22 @@
     - devicon-heroku-original
     - devicon-javascript-plain
 
-- name: Say Their Names
-  description: A list of people who were taken too soon
-  image: say_their_names.png
-  url: https://www.saytheirnames.xyz/
+- name: Rick-Roll Detection
+  description: Chrome extension that warns of any Rick Astly link
+  image: rick_roll.png
+  url:
   tags:
-    - devicon-ruby-plain-wordmark
-    - devicon-bootstrap-plain-wordmark
-    - devicon-html5-plain-wordmark
-    - devicon-css3-plain
+    - devicon-chrome-plain-wordmark
+    - devicon-javascript-plain
+
+- name: MOTD Times
+  description: A scraper to connect episodes of MOTD to Reddit
+  image: motd_times.png
+  url: http://www.motd-times.com/
+  tags:
+    - devicon-rails-plain-wordmark
+    - devicon-postgresql-plain-wordmark
+    - devicon-redis-plain-wordmark
 
 - name: Yahtzee Online
   description: Play Yahtzee online with your friends
@@ -66,14 +85,15 @@
     - devicon-heroku-original
     - devicon-javascript-plain
 
-- name: MOTD Times
-  description: A scraper to connect episodes of MOTD to Reddit
-  image: motd_times.png
-  url: http://www.motd-times.com/
+- name: Say Their Names
+  description: A list of people who were taken too soon
+  image: say_their_names.png
+  url: https://www.saytheirnames.xyz/
   tags:
-    - devicon-rails-plain-wordmark
-    - devicon-postgresql-plain-wordmark
-    - devicon-redis-plain-wordmark
+    - devicon-ruby-plain-wordmark
+    - devicon-bootstrap-plain-wordmark
+    - devicon-html5-plain-wordmark
+    - devicon-css3-plain
 
 - name: Le Wagon Japan
   description: Comprehensive list of student projects
