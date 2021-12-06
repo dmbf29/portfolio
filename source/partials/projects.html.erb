@@ -18,8 +18,14 @@
                       <span><i class="<%= tag %>"></i></span>
                     <% end %>
                   </div>
-                  <% link_to product.url, class: 'external-link', target: '_blank' do %>
-                    <i class="fas fa-external-link-alt"></i>
+                  <% if product.url %>
+                    <% link_to product.url, class: 'external-link', target: '_blank' do %>
+                      <i class="fas fa-external-link-alt"></i>
+                    <% end %>
+                  <% else %>
+                    <% link_to product.url, class: 'external-link offline', target: '_blank' do %>
+                      offline
+                    <% end %>
                   <% end %>
                 </div>
               </div>

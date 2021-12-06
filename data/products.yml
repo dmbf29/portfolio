@@ -28,28 +28,6 @@
     - devicon-heroku-original
     - devicon-javascript-plain
 
-- name: World Cup Predictor
-  description: Interactive layout to predict the 2018 World Cup results
-  image: worldcup.png
-  url: http://www.worldcuppredict.win/
-  tags:
-    - devicon-react-original-wordmark
-    - devicon-rails-plain-wordmark
-    - devicon-postgresql-plain-wordmark
-    - devicon-heroku-original
-    - devicon-javascript-plain
-
-- name: Le Wagon Japan
-  description: Comprehensive list of student projects
-  image: lewagonjapan.png
-  url: https://le-wagon-tokyo.herokuapp.com/
-  tags:
-    - devicon-slack-plain
-    - devicon-rails-plain-wordmark
-    - devicon-postgresql-plain-wordmark
-    - devicon-heroku-original
-    - devicon-javascript-plain
-
 - name: Shopify Translator
   description: Chrome extension that translates Shopify
   image: translator.png
@@ -88,6 +66,37 @@
     - devicon-heroku-original
     - devicon-javascript-plain
 
+- name: MOTD Times
+  description: A scraper to connect episodes of MOTD to Reddit
+  image: motd_times.png
+  url: http://www.motd-times.com/
+  tags:
+    - devicon-rails-plain-wordmark
+    - devicon-postgresql-plain-wordmark
+    - devicon-redis-plain-wordmark
+
+- name: Le Wagon Japan
+  description: Comprehensive list of student projects
+  image: lewagonjapan.png
+  url: https://le-wagon-tokyo.herokuapp.com/
+  tags:
+    - devicon-slack-plain
+    - devicon-rails-plain-wordmark
+    - devicon-postgresql-plain-wordmark
+    - devicon-heroku-original
+    - devicon-javascript-plain
+
+- name: World Cup Predictor
+  description: Interactive layout to predict the 2018 World Cup results
+  image: worldcup.png
+  url:
+  tags:
+    - devicon-react-original-wordmark
+    - devicon-rails-plain-wordmark
+    - devicon-postgresql-plain-wordmark
+    - devicon-heroku-original
+    - devicon-javascript-plain
+
 - name: Gibbit
   description: An online service that helps foreigners living abroad
   image: gibbit.png
@@ -97,15 +106,6 @@
     - devicon-postgresql-plain-wordmark
     - devicon-heroku-original
     - devicon-javascript-plain
-
-- name: MOTD Times
-  description: A scraper to connect episodes of MOTD to Reddit
-  image: motd_times.png
-  url: http://www.motd-times.com/
-  tags:
-    - devicon-rails-plain-wordmark
-    - devicon-postgresql-plain-wordmark
-    - devicon-redis-plain-wordmark
 
 - name: Dave Beck Music
   description: Events for a popular music act based in Seoul, Korea
@@ -150,7 +150,7 @@
 - name: Squad Manager
   description: Practicing drag-and-drop API
   image: squadmanager.png
-  url: https://squad-manager.herokuapp.com/
+  url:
   tags:
     - devicon-rails-plain-wordmark
     - devicon-postgresql-plain-wordmark
@@ -166,5 +166,3 @@
     - devicon-postgresql-plain-wordmark
     - devicon-heroku-original
     - devicon-javascript-plain
-
-
