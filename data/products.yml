@@ -105,6 +105,16 @@
     - devicon-html5-plain-wordmark
     - devicon-css3-plain
 
+- name: Movie Watch List
+  description: Keep track of your favorite movies
+  image: watchlist.png
+  url: https://watchlist-doug.herokuapp.com/
+  tags:
+    - devicon-rails-plain-wordmark
+    - devicon-postgresql-plain-wordmark
+    - devicon-heroku-original
+    - devicon-javascript-plain
+
 - name: Le Wagon Japan
   description: Comprehensive list of student projects
   image: lewagonjapan.png
