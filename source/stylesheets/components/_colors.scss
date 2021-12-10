@@ -1,0 +1,7 @@
+.bg-gray {
+  background-color: $gray;
+  &:hover {
+    background-color: $gray;
+    opacity: .8;
+  }
+}

@@ -43,6 +43,13 @@
     - activestorage
     - cloudinary
 
+- title: Contact Form on a Static Site
+  filename: contact_form.html
+  tags:
+    - html
+    - middleman
+    - getform
+
 # - title: Passing variables into partials
 #   filename: tabs.html
 #   tags:

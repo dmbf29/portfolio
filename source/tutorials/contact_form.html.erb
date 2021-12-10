@@ -1,0 +1,73 @@
+<% set_meta_tags(project_name: 'Contact Form on a Static Site', title: 'Contact Form on a Static Site', description: 'How to add a contact form on a static site')  %>
+<div class="nav-group">
+  <i class="fas fa-chevron-left font-bold"></i>
+  <%= image_tag "face.jpg", alt: "doug_photo", class: 'avatar-small-square ml-3' %>
+  <%= link_to '', '/#tutorials', class: 'nav-group-link'  %>
+</div>
+<div class="container mt-3 mb-5">
+  <div class="row">
+    <div class="col-12 small-container">
+      <h1 class='small-h1-header'>Contact Form on a Static Site</h1>
+      <p class='m-0'><em>How to add a contact form on a static site</em></p>
+      <div class="tutorial-section">
+        <p>There are <em>A LOT</em> of external tools for sending emails and messages. I have just chosen one that I thought was easy to use and setup, <%= link_to "getform", 'https://getform.io/', class: 'link-gray', target: '_blank' %>. <em>Small disclaimer:</em> You only get one form in the free plan.
+        </p>
+      </div>
+      <div class="tutorial-section">
+        <h3 class='small-h3-header'>Sign Up for <%= link_to "getform", 'https://getform.io/', class: 'link-gray', target: '_blank' %></h3>
+        <p>Straight forward sign up but they will ask you to confirm your email address.
+        </p>
+        <div class="container">
+          <%= image_tag 'tutorials/getform_signup.png', alttext: 'getform signup', width: '100%', class: "pt-2" %>
+        </div>
+      </div>
+      <div class="tutorial-section">
+        <h3 class='small-h3-header'>Create Endpoint for Form</h3>
+        <p>Fill out the form to create an endpoint for you contact form. You can give it any name, i.e. "Portfolio Contact Form" and choose your timezone.
+        </p>
+        <div class="container">
+          <%= image_tag 'tutorials/getform_create.png', alttext: 'getform create endpoint', width: '100%', class: "pt-2" %>
+        </div>
+      </div>
+      <div class="tutorial-section">
+        <h3 class='small-h3-header'>Building the form</h3>
+        <p>After creating the endpoint, they will give you a URL which you will use inside of your HTML form. I have created a simple form (with Bootstrap) that you can plug directly into your page.
+        </p>
+        <p>⚠️ <strong>Replace your endpoint inside of the</strong> <code>action</code></p>
+        <% code("html") do %>
+<form action="INSERT_YOUR_GETFORM_ENDPOINT_HERE" method="POST">
+  <div class="form-group">
+    <input type="text" name="name" class="form-control" placeholder="Name" required=true>
+  </div>
+  <div class="form-group">
+    <input type="email" name="email" class="form-control" placeholder="Email" required=true>
+  </div>
+  <div class="form-group">
+    <textarea type="text" name="message" class="form-control" placeholder="Message..." required=true></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary w-100">Send</button>
+</form>
+        <% end %>
+      </div>
+      <div class="tutorial-section">
+        <h3 class='small-h3-header'>You're Connected!</h3>
+        <p>You can now receive submissions from your form. You should see them arriving in your <%= link_to "getform dashboard", 'https://app.getform.io/forms', class: 'link-gray', target: '_blank' %>.
+        </p>
+      </div>
+      <div class="tutorial-section">
+        <h3 class='small-h3-header'>Connect to your Email</h3>
+        <p>You won't want to come to the getform dashboard and check if someone has sent you a message. Geform can notify you with an email each time a submission comes in.
+        </p>
+        <p class='pt-2'>
+        Click on the lightning bolt icon to pull up the automation options.
+        </p>
+        <div class="container">
+          <%= image_tag 'tutorials/getform_automation.png', alttext: 'getform create endpoint', width: '100%', class: "pt-2" %>
+        </div>
+        <p class='pt-2'>
+        In the options on the top right, you should see "Send an email notification". Enter your email, click submit, and you're all set! 🚀
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
