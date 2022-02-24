@@ -148,6 +148,7 @@ end
       <div class="tutorial-section">
         <h3 class='small-h3-header'>Status Conditional</h3>
         <p>If your booking status is <code>pending</code> then we'll show the forms. Otherwise, we'll display the status.</p> Let's create a method in our model.
+        <p>⚠️ If you are using status as an <code>enum</code>, you don't need this. You already have this method available.</p>
         <div class="code-wrapper">
         <% code('ruby') do %>
 # booking.rb (model)
