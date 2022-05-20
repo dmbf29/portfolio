@@ -1,9 +1,5 @@
 <% set_meta_tags(project_name: 'Conditional Navbar', title: 'Conditional Navbar', description: 'How to display different navbars on specific pages')  %>
-<div class="nav-group">
-  <i class="fas fa-chevron-left font-bold"></i>
-  <%= image_tag "face.jpg", alt: "doug_photo", class: 'avatar-small-square ml-3' %>
-  <%= link_to '', '/#tutorials', class: 'nav-group-link'  %>
-</div>
+<%= partial 'partials/back_link' %>
 <div class="container mt-3 mb-5">
   <div class="row">
     <div class="col-12 small-container">
