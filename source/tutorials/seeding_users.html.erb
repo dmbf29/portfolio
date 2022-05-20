@@ -9,89 +9,87 @@
     <div class="small-container">
       <h1 class='small-h1-header'>Seeding Users with Photos</h1>
       <p class='m-0'><em>How to add an emails and photos with Faker and ActiveStorage</em></p>
-
       <div class="tutorial-section">
         <p>When starting a new project, adding seeds gives life to your application. It gives you some initial data to play around with and adding users is normally an integral part of it. They tricky part is that we want it to feel real without actually using people's photos or information.
         </p>
       </div>
-
       <div class="tutorial-section">
         <h3 class='small-h3-header'>Using Faker</h3>
-        <p>I'm going to assume that we're using Devise for our <code>User</code> model. That means we'll most likely be logging in with an email. I'm a big fan of the gem <%= link_to "Faker", 'https://github.com/faker-ruby/faker', class: 'link-gray', target: '_blank' %>, but you have to be careful with this one. Some of their emails are real. The last thing you want to do is accidentally email all of those <code>@gmail.com</code> addresses you seeded into your database.
+        <p>I'm going to assume that we're using Devise for our <code>User</code> model. That means we'll most likely be logging in with an email. Let's use the gem <%= link_to "Faker", 'https://github.com/faker-ruby/faker', class: 'link-gray', target: '_blank' %>, but you have to be careful with this one. Some of their emails are real. The last thing you want to do is accidentally email all of those <code>@gmail.com</code> addresses you seeded into your database.
         </p>
       </div>
-
       <div class="tutorial-section">
         If you use <code>Faker::Internet.safe_email</code>, then it'll guarantee you're using an email address that <strong>can't</strong> receive messages (ie: <code>"margert_huel@example.net</code>). To counteract the <code>@example.com</code>, I like to use the real emails of the other members in my team. This allows them to always know an email they can sign in with. Otherwise every time you run your seeds, you'll have to open the Rails console and find a new users's email.
       </div>
-
       <div class="tutorial-section">
         Don't forget to add the gem into your <code>Gemfile</code>.
         <div class="code-wrapper">
           <% code('ruby') do %>
-gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+            gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
           <% end %>
         </div>
         <p>Once you've added the new gem, you need to make sure it's installed. From your Terminal:</p>
         <div class="code-wrapper">
           <% code('shell') do %>
-bundle install
+            bundle install
           <% end %>
         </div>
       </div>
-
       <div class="tutorial-section">
         <h3 class='small-h3-header'>Attaching a Photo</h3>
-        <p>So we've already seen how to attach a photo to an instance in our seeds:</p>
+        <div class="tutorial-section">
+          We need to go inside our User model first (<code>user.rb</code>) and attach a photo
+        </div>
+        <% code('ruby') do %>
+          # ...
+          has_one_attached :photo
+          # ...
+        <% end %>
+        <p>For Le Wagon students, we had this example in our lecture slides:</p>
         <div class="code-wrapper">
           <% code('ruby') do %>
-require "open-uri"
-
-file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
-article = Article.new(title: 'NES', body: "A great console")
-article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+            require "open-uri"
+            file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+            article = Article.new(title: 'NES', body: "A great console")
+            article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
           <% end %>
         </div>
         <p>But, that's only one photo on one instance of an <code>article</code>. How can we generate a unique photo for each user that we seed in the database? We can user <%= link_to 'thispersondoesnotexist.com',
         'https://thispersondoesnotexist.com/', class: 'link-gray', target: '_blank' %>. This website uses AI to generate photos of fake people.
         </p>
       </div>
-
       <div class="tutorial-section">
         So let's attach those AI photos to our users:
         <div class="code-wrapper">
           <% code('ruby') do %>
-require 'open-uri'
-
-50.times do
-  file = URI.open('https://thispersondoesnotexist.com/image')
-  user = Upload.create!(
-    email: Faker::Internet.safe_email,
-    password: '123123', # needs to be 6 digits,
-    # add any additional attributes you have on your model
-  )
-  user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
-end
+            require 'open-uri'
+            50.times do
+            user = Upload.create!(
+            email: Faker::Internet.safe_email,
+            password: '123123', # needs to be 6 digits,
+            # add any additional attributes you have on your model
+            )
+            file = URI.open('https://thispersondoesnotexist.com/image')
+            user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+            end
           <% end %>
         </div>
       </div>
-
       <div class="tutorial-section">
         <h3 class='small-h3-header'>Make Sure They Attached</h3>
         <p>Go to your Terminal and open up a <code>rails c</code></p>
         <div class="code-wrapper">
           <% code('shell') do %>
-rails c
+            rails c
           <% end %>
         </div>
         <p>Pull up the last user and make sure a photo is attached</p>
         <div class="code-wrapper">
           <% code('ruby') do %>
-User.last.photo.attached? # if true, success!
+            User.last.photo.attached? # if true, success!
           <% end %>
         </div>
       </div>
-
     </div>
   </div>
 </div>
