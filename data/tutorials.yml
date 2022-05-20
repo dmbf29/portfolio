@@ -3,6 +3,7 @@
   tags:
     - rails
     - css
+    - form
 
 - title: Making an entire card clickable
   filename: clickable_card.html
@@ -10,6 +11,7 @@
     - html
     - css
     - rails
+    - card
 
 - title: Building tabs with style
   filename: tabs.html
@@ -17,6 +19,7 @@
     - bootstrap
     - html
     - css
+    - tabs
 
 - title: Side scrolling carousel (Netflix)
   filename: carousel.html
@@ -29,12 +32,14 @@
   filename: conditional_navbar.html
   tags:
     - rails
+    - navbar
 
 - title: Seeding fake users (w/images)
   filename: seeding_users.html
   tags:
     - rails
     - activestorage
+    - seeds
 
 - title: Setting up ActiveStorage and Cloudinary
   filename: activestorage_cloudinary.html
