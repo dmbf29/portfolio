@@ -25,13 +25,13 @@
         Don't forget to add the gem into your <code>Gemfile</code>.
         <div class="code-wrapper">
           <% code('ruby') do %>
-            gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
           <% end %>
         </div>
         <p>Once you've added the new gem, you need to make sure it's installed. From your Terminal:</p>
         <div class="code-wrapper">
           <% code('shell') do %>
-            bundle install
+bundle install
           <% end %>
         </div>
       </div>
@@ -40,18 +40,20 @@
         <div class="tutorial-section">
           We need to go inside our User model first (<code>user.rb</code>) and attach a photo
         </div>
-        <% code('ruby') do %>
-          # ...
-          has_one_attached :photo
-          # ...
-        <% end %>
+        <div class="code-wrapper">
+          <% code('ruby') do %>
+# ...
+has_one_attached :photo
+# ...
+          <% end %>
+        </div>
         <p>For Le Wagon students, we had this example in our lecture slides:</p>
         <div class="code-wrapper">
           <% code('ruby') do %>
-            require "open-uri"
-            file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
-            article = Article.new(title: 'NES', body: "A great console")
-            article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+require "open-uri"
+file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+article = Article.new(title: 'NES', body: "A great console")
+article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
           <% end %>
         </div>
         <p>But, that's only one photo on one instance of an <code>article</code>. How can we generate a unique photo for each user that we seed in the database? We can user <%= link_to 'thispersondoesnotexist.com',
@@ -62,16 +64,16 @@
         So let's attach those AI photos to our users:
         <div class="code-wrapper">
           <% code('ruby') do %>
-            require 'open-uri'
-            50.times do
-            user = Upload.create!(
-            email: Faker::Internet.safe_email,
-            password: '123123', # needs to be 6 digits,
-            # add any additional attributes you have on your model
-            )
-            file = URI.open('https://thispersondoesnotexist.com/image')
-            user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
-            end
+require 'open-uri'
+50.times do
+  user = Upload.create!(
+  email: Faker::Internet.safe_email,
+  password: '123123', # needs to be 6 digits,
+  # add any additional attributes you have on your model
+)
+file = URI.open('https://thispersondoesnotexist.com/image')
+user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+end
           <% end %>
         </div>
       </div>
@@ -80,13 +82,13 @@
         <p>Go to your Terminal and open up a <code>rails c</code></p>
         <div class="code-wrapper">
           <% code('shell') do %>
-            rails c
+rails c
           <% end %>
         </div>
         <p>Pull up the last user and make sure a photo is attached</p>
         <div class="code-wrapper">
           <% code('ruby') do %>
-            User.last.photo.attached? # if true, success!
+User.last.photo.attached? # if true, success!
           <% end %>
         </div>
       </div>
