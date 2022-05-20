@@ -128,15 +128,17 @@ end
         <p>We're going to need two forms for each action. And we're going to hide the new status as a <code>hidden field</code>. The "button" is going to be the submit for the form. Like this:</p>
         <div class="code-wrapper">
           <% code('erb') do %>
-<%%= simple_form_for booking do |f| %>
-  <%%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
-  <%%= f.submit 'Accept', class: 'btn btn-info' %>
-<%% end %>
+<div class="d-flex">
+  <%%= simple_form_for booking do |f| %>
+    <%%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+    <%%= f.submit 'Accept', class: 'btn btn-info' %>
+  <%% end %>
 
-<%%= simple_form_for booking do |f| %>
-  <%%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
-  <%%= f.submit 'Reject', class: 'btn btn-info' %>
-<%% end %>
+  <%%= simple_form_for booking do |f| %>
+    <%%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
+    <%%= f.submit 'Reject', class: 'btn btn-light' %>
+  <%% end %>
+</div>
           <% end %>
         </div>
       </div>
@@ -254,7 +256,7 @@ end
           <%% end %>
           <%%= simple_form_for booking do |f| %>
             <%%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
-            <%%= f.submit 'Reject', class: 'btn btn-info' %>
+            <%%= f.submit 'Reject', class: 'btn btn-light' %>
           <%% end %>
         <%% else %>
           <p class='booking-tag'><%%= booking.status %></p>
