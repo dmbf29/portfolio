@@ -47,6 +47,16 @@
     - devicon-chrome-plain-wordmark
     - devicon-javascript-plain
 
+- name: Theft Detector
+  description: Check to see if you've been hacked
+  image: theft_detector.png
+  url:  https://theft-protection.netlify.app/
+  tags:
+    - devicon-ruby-plain-wordmark
+    - devicon-bootstrap-plain-wordmark
+    - devicon-html5-plain-wordmark
+    - devicon-css3-plain
+
 - name: Premier Football
   description: Fantasy Premier League application.
   image: prem_football.png
