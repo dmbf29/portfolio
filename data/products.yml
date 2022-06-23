@@ -47,6 +47,17 @@
     - devicon-chrome-plain-wordmark
     - devicon-javascript-plain
 
+- name: Jambox
+  description: Keep track of all of your favorite music
+  image: jambox.png
+  url: https://jambox-music.herokuapp.com/
+  tags:
+    - devicon-react-original-wordmark
+    - devicon-rails-plain-wordmark
+    - devicon-postgresql-plain-wordmark
+    - devicon-heroku-original
+    - devicon-javascript-plain
+
 - name: Theft Detector
   description: Check to see if you've been hacked
   image: theft_detector.png
