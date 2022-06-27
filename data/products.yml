@@ -190,7 +190,7 @@
 - name: Starwars Universe
   description: A list of every Star Wars planet and character
   image: starwars.png
-  url: https://star-wars-universe-lw.herokuapp.com/
+  url: https://star-wars-full-universe.herokuapp.com/
   tags:
     - devicon-rails-plain-wordmark
     - devicon-postgresql-plain-wordmark
