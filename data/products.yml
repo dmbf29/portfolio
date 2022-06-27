@@ -128,7 +128,7 @@
 - name: Movie Watch List
   description: Keep track of your favorite movies
   image: watchlist.png
-  url: https://watchlist-doug.herokuapp.com/
+  url: https://watchlist-dmb.herokuapp.com/
   tags:
     - devicon-rails-plain-wordmark
     - devicon-postgresql-plain-wordmark
