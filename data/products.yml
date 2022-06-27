@@ -180,7 +180,7 @@
 - name: Simpons Database
   description: A list of every Simpons character
   image: simpsons.png
-  url: https://simpson-characters.herokuapp.com/
+  url: https://simpson-world.herokuapp.com/
   tags:
     - devicon-rails-plain-wordmark
     - devicon-postgresql-plain-wordmark
