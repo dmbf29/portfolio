@@ -220,7 +220,7 @@
 - name: Mr. Cocktail
   description: A collection of cocktail ingredients
   image: cocktail.png
-  url: https://mr-cocktail-dmbf29.herokuapp.com/
+  url: https://mr-cocktail-doug.herokuapp.com/
   tags:
     - devicon-rails-plain-wordmark
     - devicon-postgresql-plain-wordmark
