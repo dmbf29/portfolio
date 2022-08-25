@@ -22,7 +22,7 @@
     - tabs
 
 - title: Side scrolling carousel (Netflix)
-  filename: carousel.html
+  filename: side_scroll.html
   tags:
     - html
     - js
