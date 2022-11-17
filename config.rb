@@ -46,7 +46,7 @@
 #     "Helping"
 #   end
 # end
-activate :metaman, host: 'http://www.douglasberkley.com/'
+# activate :metaman, host: 'http://www.douglasberkley.com/'
 
 # Use sprockets for JS requires
 activate :sprockets
