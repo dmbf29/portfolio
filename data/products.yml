@@ -2,6 +2,7 @@
   description: Automatically generate Japan Post shipping labels
   image: easylabel.png
   url: https://apps.shopify.com/easy-label-japan-post
+  github:
   tags:
     - devicon-rails-plain-wordmark
     - devicon-postgresql-plain-wordmark
@@ -12,6 +13,7 @@
   description: Display shipping rates from Japan Post in your store
   image: easyrates.png
   url: https://apps.shopify.com/easy-rates-japan-post
+  github:
   tags:
     - devicon-rails-plain-wordmark
     - devicon-postgresql-plain-wordmark
@@ -22,6 +24,7 @@
   description: Sports prediction application
   image: octacle.png
   url: https://www.octacle.app/
+  github: https://github.com/trouni/predictor-vue
   tags:
     - devicon-vuejs-plain-wordmark
     - devicon-rails-plain-wordmark
@@ -33,6 +36,7 @@
   description: Cash on delivery app listed on the Shopify store
   image: advanced_cod.png
   url: https://apps.shopify.com/advanced-cash-on-delivery-global
+  github:
   tags:
     - devicon-rails-plain-wordmark
     - devicon-postgresql-plain-wordmark
@@ -43,6 +47,7 @@
   description: Chrome extension that translates Shopify
   image: translator.png
   url: https://chrome.google.com/webstore/detail/shopify-%E6%97%A5%E6%9C%AC%E8%AA%9E-japanese/logjaoidoeihjlkmgncnnjfldhdiagac?hl=en-US
+  github:
   tags:
     - devicon-chrome-plain-wordmark
     - devicon-javascript-plain
@@ -50,7 +55,8 @@
 - name: Jambox
   description: Keep track of all of your favorite music
   image: jambox.png
-  url: https://jambox-music.herokuapp.com/
+  url:
+  github: https://github.com/dmbf29/jambox
   tags:
     - devicon-react-original-wordmark
     - devicon-rails-plain-wordmark
@@ -62,6 +68,7 @@
   description: Check to see if you've been hacked
   image: theft_detector.png
   url:  https://theft-protection.netlify.app/
+  github: https://github.com/dmbf29/theft-detector
   tags:
     - devicon-ruby-plain-wordmark
     - devicon-bootstrap-plain-wordmark
@@ -72,6 +79,7 @@
   description: Fantasy Premier League application.
   image: prem_football.png
   url: https://www.premierfooty.club/
+  github:
   tags:
     - devicon-rails-plain-wordmark
     - devicon-postgresql-plain-wordmark
@@ -82,6 +90,7 @@
   description: Chrome extension that warns of any 'Never Gonna Give You Up' link
   image: rick_roll.png
   url:
+  github: https://github.com/dmbf29/rick-detection
   tags:
     - devicon-chrome-plain-wordmark
     - devicon-javascript-plain
@@ -90,6 +99,7 @@
   description: A scraper to connect episodes of MOTD to Reddit
   image: motd_times.png
   url: http://www.motd-times.com/
+  github: https://github.com/dmbf29/motd_times
   tags:
     - devicon-rails-plain-wordmark
     - devicon-postgresql-plain-wordmark
@@ -99,6 +109,7 @@
   description: Adventure service to book near death experiences.
   image: experience_the_end.png
   url: https://experience-the-end.herokuapp.com/
+  github: https://github.com/dmbf29/experience_the_end
   tags:
     - devicon-rails-plain-wordmark
     - devicon-postgresql-plain-wordmark
@@ -109,6 +120,7 @@
   description: Play Yahtzee online with your friends
   image: yahtzee.png
   url: https://www.yahtzee.club/
+  github: https://github.com/dmbf29/yahtzee
   tags:
     - devicon-rails-plain-wordmark
     - devicon-postgresql-plain-wordmark
@@ -119,6 +131,7 @@
   description: A list of people who were taken too soon
   image: say_their_names.png
   url: https://www.saytheirnames.xyz/
+  github: https://github.com/dmbf29/say-their-names
   tags:
     - devicon-ruby-plain-wordmark
     - devicon-bootstrap-plain-wordmark
@@ -129,6 +142,7 @@
   description: Keep track of your favorite movies
   image: watchlist.png
   url: https://watchlist-dmb.herokuapp.com/
+  github: https://github.com/dmbf29/rails-watch-list
   tags:
     - devicon-rails-plain-wordmark
     - devicon-postgresql-plain-wordmark
@@ -139,6 +153,7 @@
   description: Comprehensive list of student projects
   image: lewagonjapan.png
   url:
+  github:
   tags:
     - devicon-slack-plain
     - devicon-rails-plain-wordmark
@@ -150,6 +165,7 @@
   description: Interactive layout to predict the 2018 World Cup results
   image: worldcup.png
   url:
+  github:
   tags:
     - devicon-react-original-wordmark
     - devicon-rails-plain-wordmark
@@ -161,6 +177,7 @@
   description: An online service that helps foreigners living abroad
   image: gibbit.png
   url:
+  github: https://github.com/dmbf29/gibbit
   tags:
     - devicon-rails-plain-wordmark
     - devicon-postgresql-plain-wordmark
@@ -170,7 +187,8 @@
 - name: Dave Beck Music
   description: Events for a popular music act based in Seoul, Korea
   image: davebeckmusic.png
-  url: https://dave-beck-music.herokuapp.com/
+  url:
+  github: https://github.com/dmbf29/dave_beck_music
   tags:
     - devicon-rails-plain-wordmark
     - devicon-postgresql-plain-wordmark
@@ -180,7 +198,8 @@
 - name: Simpons Database
   description: A list of every Simpons character
   image: simpsons.png
-  url: https://simpson-world.herokuapp.com/
+  url:
+  github: https://github.com/dmbf29/super_character
   tags:
     - devicon-rails-plain-wordmark
     - devicon-postgresql-plain-wordmark
@@ -190,7 +209,8 @@
 - name: Starwars Universe
   description: A list of every Star Wars planet and character
   image: starwars.png
-  url: https://star-wars-full-universe.herokuapp.com/
+  url:
+  github: https://github.com/dmbf29/star_wars_characters
   tags:
     - devicon-rails-plain-wordmark
     - devicon-postgresql-plain-wordmark
@@ -201,6 +221,7 @@
   description: Add Yann's face to your photo
   image: yannify.png
   url: https://yannify.herokuapp.com/
+  github: https://github.com/dmbf29/yannify
   tags:
     - devicon-rails-plain-wordmark
     - devicon-postgresql-plain-wordmark
@@ -211,6 +232,7 @@
   description: Practicing drag-and-drop API
   image: squadmanager.png
   url:
+  github: https://github.com/dmbf29/squad-manager
   tags:
     - devicon-rails-plain-wordmark
     - devicon-postgresql-plain-wordmark
@@ -220,7 +242,8 @@
 - name: Mr. Cocktail
   description: A collection of cocktail ingredients
   image: cocktail.png
-  url: https://mr-cocktail-doug.herokuapp.com/
+  url:
+  github: https://github.com/dmbf29/rails-mister-cocktail
   tags:
     - devicon-rails-plain-wordmark
     - devicon-postgresql-plain-wordmark

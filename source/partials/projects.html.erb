@@ -18,15 +18,23 @@
                       <span><i class="<%= tag %>"></i></span>
                     <% end %>
                   </div>
-                  <% if product.url %>
-                    <% link_to product.url, class: 'external-link', target: '_blank' do %>
-                      <i class="fas fa-external-link-alt"></i>
+                  <div class="d-flex">
+                    <% if product.url %>
+                      <% link_to product.url, class: 'external-link', target: '_blank' do %>
+                        <i class="fas fa-external-link-alt"></i>
+                      <% end %>
                     <% end %>
-                  <% else %>
-                    <% link_to product.url, class: 'external-link offline', target: '_blank' do %>
-                      offline
+                    <% if product.github %>
+                      <% link_to product.github, class: 'external-link', target: '_blank' do %>
+                        <i class="fab fa-github"></i>
+                      <% end %>
                     <% end %>
-                  <% end %>
+                    <% unless product.url || product.github  %>
+                      <% link_to product.url, class: 'external-link offline', target: '_blank' do %>
+                        offline
+                      <% end %>
+                    <% end %>
+                  </div>
                 </div>
               </div>
             </div>
