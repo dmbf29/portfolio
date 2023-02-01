@@ -1,79 +1,77 @@
 - title: How to approve and reject a booking
-  filename: booking_status.html
+  url: https://dev.to/dmbf29/updating-a-booking-status-2ihh
   tags:
     - rails
     - css
     - form
 
 - title: Making an entire card clickable
-  filename: clickable_card.html
+  url: https://dev.to/dmbf29/make-a-card-clickable-in-css-10fo
   tags:
     - html
     - css
     - rails
-    - card
 
 - title: Building tabs with style
-  filename: tabs.html
+  url: https://dev.to/dmbf29/building-functional-tabs-with-style-pdb
   tags:
     - bootstrap
     - html
     - css
-    - tabs
-
-- title: Side scrolling carousel (Netflix)
-  filename: side_scroll.html
-  tags:
-    - html
-    - js
-    - rails
-
-- title: Conditional navbar
-  filename: conditional_navbar.html
-  tags:
-    - rails
-    - navbar
 
 - title: Seeding fake users (w/images)
-  filename: seeding_users.html
+  url: https://dev.to/dmbf29/seeding-users-with-photos-157j
   tags:
     - rails
     - activestorage
     - seeds
 
-- title: Setting up ActiveStorage and Cloudinary
-  filename: activestorage_cloudinary.html
-  tags:
-    - rails
-    - activestorage
-    - cloudinary
+# - title: Conditional navbar
+#   url: conditional_navbar.html
+#   tags:
+#     - rails
+#     - navbar
 
-- title: Contact Form on a Static Site
-  filename: contact_form.html
-  tags:
-    - html
-    - middleman
-    - getform
+# - title: Setting up ActiveStorage and Cloudinary
+#   url: activestorage_cloudinary.html
+#   tags:
+#     - rails
+#     - activestorage
+#     - cloudinary
+
+# - title: Contact Form on a Static Site
+#   url: contact_form.html
+#   tags:
+#     - html
+#     - middleman
+#     - getform
+
+# - title: Side scrolling carousel (Netflix)
+#   url: side_scroll.html
+#   tags:
+#     - html
+#     - js
+#     - rails
 
 # - title: Passing variables into partials
-#   filename: tabs.html
+#   url: tabs.html
 #   tags:
 #     - rails
 
 # - title: Form with nested resources
-#   filename: tabs.html
+#   url: tabs.html
 #   tags:
 #     - rails
 #     - simple_form
 
 # - title: Building a photo grid
-#   filename: tabs.html
+#   url: tabs.html
 #   tags:
 #     - html
 #     - css
 #     - rails
 
 # - title: Routing for bookings. Customer vs. Owner
-#   filename: tabs.html
+#   url: tabs.html
 #   tags:
 #     - rails

@@ -1,7 +1,9 @@
 .ul-title {
   flex-wrap: wrap;
   a {
-    color: $normal-gray;
+    color: $gray;
+    text-decoration: none;
+    font-weight: lighter;
   }
   a:hover {
     text-decoration: none;

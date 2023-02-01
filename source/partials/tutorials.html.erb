@@ -7,14 +7,15 @@
         <ul class='pl-3'>
           <% data.tutorials.each do |tutorial| %>
             <div class="d-flex ul-title">
-            <li class='d-flex'>
-              - <%= link_to tutorial.title, "/tutorials/#{tutorial.filename}" %>
-            </li>
-            <div class="d-flex">
+              <li class='d-flex'>
+                <%= image_tag 'dev.png', alt: "Dev.to logo", width: 25 %> <%= link_to tutorial.title, tutorial.url, target: '_blank', class: 'mx-2'
+ %>
+              </li>
+              <div class="d-flex">
                 <% tutorial.tags.each do |tag| %>
                   <span class='tutorial-tag'><%= tag %></span>
                 <% end %>
-            </div>
+              </div>
             </div>
           <% end %>
         </ul>
