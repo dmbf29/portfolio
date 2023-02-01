@@ -19,5 +19,6 @@ gem "tzinfo-data", platforms: [:mswin, :mingw]
 ## Middleman sprockets
 gem 'middleman-sprockets'
 # gem 'middleman-metaman'
+# gem 'middleman-meta-tags'
 gem "middleman-syntax"
 gem 'rouge'

@@ -1,11 +1,10 @@
-<% set_meta_tags(project_name: 'Updating a Booking Status', title: 'Updating a Booking Status', description: 'How to build accept/reject buttons for a booking')  %>
+<%# set_meta_tags(project_name: 'Updating a Booking Status', title: 'Updating a Booking Status', description: 'How to build accept/reject buttons for a booking')  %>
 <%= partial 'partials/back_link' %>
 <div class="container mt-3 mb-5">
   <div class="row">
     <div class="col-12 small-container">
       <h1 class='small-h1-header'>Updating a Booking Status</h1>
       <p class='m-0'><em>How to build accept/reject buttons for a booking</em></p>
-
       <div class="tutorial-section">
         <p>This is one of the most frequent tickets I receive. I'm going to start under the assumption you have a <code>booking</code> model in your application. (And hopefully you have a default status.). It should look something like this:
         </p>
@@ -13,313 +12,295 @@
           <%= image_tag 'bookings_table.png', class: 'mt-2', width: '175px' %>
         </div>
       </div>
-
       <div class="tutorial-section">
         <p>Really the only thing we're interested here is how to change the status to <code>accepted</code> or <code>rejected</code> as the owner of the offer. An AirBnb host isn't going to accept every offer than comes through. So how does this work? Do we create buttons? Links? Separate controller actions for accept and reject? <strong>No.</strong> I've seen a lot of different ways people try to solve this, but it's best to keep it simple.
         </p>
       </div>
-
       <div class="tutorial-section">
         <p>We need a form. This form is just going to <code>update</code> our booking. This allows our <code>bookings#update</code> controller action to handle both the accepting and rejecting.</p>
       </div>
-
       <div class="tutorial-section">
         <h3 class='small-h3-header'>Setup the Route</h3>
         <p>Let's make sure we have the correct route in our <code>routes.rb</code>. This shouldn't be nested since the bookings already have an ID.</p>
         <div class="code-wrapper">
-        <% code('ruby') do %>
-# routes.rb
-resources :bookings, only: [:update]
-        <% end %>
+          <% code('ruby') do %>
+            # routes.rb
+            resources :bookings, only: [:update]
+          <% end %>
         </div>
       </div>
-
       <div class="tutorial-section">
         <h3 class='small-h3-header'>Configure the Controller</h3>
         <p>Let's add the update action in the <code>bookings</code> controller (along with the strong params if they're missing). This is just standard CRUD, nothing special here.
         </p>
         <div class="code-wrapper">
-        <% code('ruby') do %>
-# bookings_controller.rb
-def update
-  @booking = Booking.find(params[:id])
-  if @booking.update(booking_params)
-    # redirect_to # up to you...
-  else
-    # render # where was the booking update form?
-  end
-end
-
-private
-
-def booking_params
-  # TODO: check your model, might be different than mine
-  params.require(:booking).permit(:status, :start_time, :end_time)
-end
-        <% end %>
+          <% code('ruby') do %>
+            # bookings_controller.rb
+            def update
+            @booking = Booking.find(params[:id])
+            if @booking.update(booking_params)
+            # redirect_to # up to you...
+            else
+            # render # where was the booking update form?
+            end
+            end
+            private
+            def booking_params
+            # TODO: check your model, might be different than mine
+            params.require(:booking).permit(:status, :start_time, :end_time)
+            end
+          <% end %>
         </div>
       </div>
-
       <div class="tutorial-section">
         <h3 class='small-h3-header'>Build your View</h3>
         <p>Now to the tough part. Let's go to your <code>view</code> where you want to accept and reject. This can be a couple places depending on how you build your routes.
         </p>
       </div>
-
       <div class="tutorial-section">
         <p>I'm going to make another assumption here. You're either iterating over <code>@bookings</code> or something like <code>current_user.bookings_as_owner</code>. If you don't have the owner bookings setup yet, you can read the <a href='https://kitt.lewagon.com/knowledge/cheatsheets/activerecord_advanced' target='_blank' class='link-gray'>Kitt tutorial</a> (Le Wagon students only for now).</p>
         <div class="code-wrapper">
-        <% code('erb') do %>
-<%% @bookings.each do |booking| %>
-  <!-- with the booking card here -->
-<%% end %>
-        <% end %>
-        </div>
-      </div>
-
-      <div class="tutorial-section">
-        <p>You can design your cards how you see it fit with your application. But I'll let's just use a simple one to get started.
-        </p>
-        <div class="tutorial-container">
-          <div class="bookings">
-            <div class="booking">
-              <div class='booking-left'>
-                <img src="https://kitt.lewagon.com/placeholder/users/dmbf29" class="avatar-bordered" />
-                <div class="booking-info">
-                  <div class="booking-info-title">
-                    Douglas Berkley
-                  </div>
-                  <div class="booking-info-details">
-                    Dec 12, 8:00am - 11:00am
-                  </div>
-                </div>
-              </div>
-              <div class="booking-actions">
-                <button class='btn btn-info'>Accept</button>
-                <button class='btn btn-light'>Reject</button>
-              </div>
-            </div>
-            <div class="booking">
-              <div class='booking-left'>
-                <img src="https://kitt.lewagon.com/placeholder/users/yannklein" class="avatar-bordered" />
-                <div class="booking-info">
-                  <div class="booking-info-title">
-                    Yann Klein
-                  </div>
-                  <div class="booking-info-details">
-                    Dec 13, 10:00am - 11:30am
-                  </div>
-                </div>
-              </div>
-              <div class="booking-actions">
-                <button class='btn btn-info'>Accept</button>
-                <button class='btn btn-light'>Reject</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tutorial-section">
-        <p>Okay now for those "buttons". We don't want just a normal button or link though. This is where we need the booking update form. Let's use <code>simple_form_for</code> (<%= link_to "check out the docs here", 'https://github.com/heartcombo/simple_form', target: '_blank', class: 'link-gray' %>).
-        </p>
-      </div>
-      <div class="tutorial-section">
-        <p>We're going to need two forms for each action. And we're going to hide the new status as a <code>hidden field</code>. The "button" is going to be the submit for the form. Like this:</p>
-        <div class="code-wrapper">
           <% code('erb') do %>
-<div class="d-flex">
-  <%%= simple_form_for booking do |f| %>
-    <%%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
-    <%%= f.submit 'Accept', class: 'btn btn-info' %>
-  <%% end %>
-
-  <%%= simple_form_for booking do |f| %>
-    <%%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
-    <%%= f.submit 'Reject', class: 'btn btn-light' %>
-  <%% end %>
-</div>
-          <% end %>
+            <%% @bookings.each do |booking| %>
+              <!-- with the booking card here -->
+              <%% end %>
+            <% end %>
+          </div>
         </div>
-      </div>
-
-      <div class="tutorial-section">
-        <h3 class='small-h3-header'>Status Conditional</h3>
-        <p>If your booking status is <code>pending</code> then we'll show the forms. Otherwise, we'll display the status.</p> Let's create a method in our model.
-        <p>⚠️ If you are using status as an <code>enum</code>, you don't need this. You already have this method available.</p>
-        <div class="code-wrapper">
-        <% code('ruby') do %>
-# booking.rb (model)
-def pending?
-  status == 'pending'
-end
-        <% end %>
-        </div>
-        <p>Now we can use that method in our conditional</p>
-        <div class="code-wrapper">
-        <% code('erb') do %>
-<%% if booking.pending? %>
-  <!-- Display Forms-->
-<%% else %>
-  <!-- Display Status-->
-  <p class='booking-tag'><%%= booking.status %></p>
-<%% end %>
-        <% end %>
-        </div>
-        <p>We should get some bookings like this now:</p>
-        <div class="tutorial-container">
-          <div class="bookings">
-            <div class="booking">
-              <div class='booking-left'>
-                <img src="https://kitt.lewagon.com/placeholder/users/dmbf29" class="avatar-bordered" />
-                <div class="booking-info">
-                  <div class="booking-info-title">
-                    Douglas Berkley
-                  </div>
-                  <div class="booking-info-details">
-                    Dec 12, 8:00am - 11:00am
+        <div class="tutorial-section">
+          <p>You can design your cards how you see it fit with your application. But I'll let's just use a simple one to get started.
+          </p>
+          <div class="tutorial-container">
+            <div class="bookings">
+              <div class="booking">
+                <div class='booking-left'>
+                  <img src="https://kitt.lewagon.com/placeholder/users/dmbf29" class="avatar-bordered" />
+                  <div class="booking-info">
+                    <div class="booking-info-title">
+                      Douglas Berkley
+                    </div>
+                    <div class="booking-info-details">
+                      Dec 12, 8:00am - 11:00am
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="booking-actions">
-                <button class='btn btn-info'>Accept</button>
-                <button class='btn btn-light'>Reject</button>
-              </div>
-            </div>
-            <div class="booking">
-              <div class='booking-left'>
-                <img src="https://kitt.lewagon.com/placeholder/users/yannklein" class="avatar-bordered" />
-                <div class="booking-info">
-                  <div class="booking-info-title">
-                    Yann Klein
-                  </div>
-                  <div class="booking-info-details">
-                    Dec 13, 10:00am - 11:30am
-                  </div>
+                <div class="booking-actions">
+                  <button class='btn btn-info'>Accept</button>
+                  <button class='btn btn-light'>Reject</button>
                 </div>
               </div>
-              <div class="booking-actions">
-                <button class='btn btn-info'>Accept</button>
-                <button class='btn btn-light'>Reject</button>
-              </div>
-            </div>
-            <div class="booking">
-              <div class='booking-left'>
-                <img src="https://kitt.lewagon.com/placeholder/users/trounitiet" class="avatar-bordered" />
-                <div class="booking-info">
-                  <div class="booking-info-title">
-                    Trouni Tiet
-                  </div>
-                  <div class="booking-info-details">
-                    Dec 15, 9:30am - 11:30am
+              <div class="booking">
+                <div class='booking-left'>
+                  <img src="https://kitt.lewagon.com/placeholder/users/yannklein" class="avatar-bordered" />
+                  <div class="booking-info">
+                    <div class="booking-info-title">
+                      Yann Klein
+                    </div>
+                    <div class="booking-info-details">
+                      Dec 13, 10:00am - 11:30am
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="booking-actions">
-                <p class='booking-tag'>Accepted</p>
+                <div class="booking-actions">
+                  <button class='btn btn-info'>Accept</button>
+                  <button class='btn btn-light'>Reject</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="tutorial-section">
-      </div>
-      <div class="tutorial-section">
-        <h3 class='small-h3-header'>Wrap Up</h3>
-        <p>Now all we have to do is build these forms in our iteration.</p>
-        <div class="d-flex justify-content-between align-items-center mb-2">
-          <h3 class='small-h3-header'>ERB</h3>
-          <button type='button' class='btn btn-dark btn-copy' data-container="body" data-toggle="popover" data-placement="top" data-content="Copied!">Copy</button>
+        <div class="tutorial-section">
+          <p>Okay now for those "buttons". We don't want just a normal button or link though. This is where we need the booking update form. Let's use <code>simple_form_for</code> (<%= link_to "check out the docs here", 'https://github.com/heartcombo/simple_form', target: '_blank', class: 'link-gray' %>).
+          </p>
         </div>
-        <div class="code-wrapper">
-        <% code('erb') do %>
-<div class="bookings">
-  <%% @bookings.each do |booking| %>
-    <div class="booking">
-      <div class='booking-left'>
-        <!-- if you're using cloudinary and activestorage -->
-        <%%= cl_image_tag booking.user.photo, class: 'avatar-bordered' %>
-        <div class="booking-info">
-          <div class="booking-info-title">
-            <%%= booking.user.name %>
-          </div>
-          <div class="booking-info-details">
-            <%%= booking.start_time.strftime('%l:%M %p') %> - <%%= booking.end_time.strftime('%l:%M %p') %>
-          </div>
-        </div>
-      </div>
-      <div class="booking-actions">
-        <%% if booking.pending? %>
-          <%%= simple_form_for booking do |f| %>
-            <%%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
-            <%%= f.submit 'Accept', class: 'btn btn-info' %>
-          <%% end %>
-          <%%= simple_form_for booking do |f| %>
-            <%%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
-            <%%= f.submit 'Reject', class: 'btn btn-light' %>
-          <%% end %>
-        <%% else %>
-          <p class='booking-tag'><%%= booking.status %></p>
-        <%% end %>
-      </div>
-    </div>
-  <%% end %>
-</div>
-        <% end %>
-        </div>
-      </div>
-
-      <div class="tutorial-section">
-        <div class="d-flex justify-content-between align-items-center mb-2">
-          <h3 class='small-h3-header'>CSS</h3>
-          <button type='button' class='btn btn-dark btn-copy' data-container="body" data-toggle="popover" data-placement="top" data-content="Copied!">Copy</button>
-        </div>
-        <div class="code-wrapper">
-        <% code('scss') do %>
-.booking {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 16px 0;
-
-  .booking-left {
-    display: flex;
-    align-items: center;
-  }
-
-  .booking-actions {
-    display: flex;
-    align-items: center;
-  }
-  .booking-tag {
-    margin: 1px 4px;
-    padding: 2px 5px 0px 5px;
-    background-color: #bfbfbf;
-    color: white;
-    border-radius: 8px;
-    font-weight: lighter;
-    font-size: 12px;
-  }
-}
-
-.booking-info {
-  display: flex;
-  flex-direction: column;
-  margin-left: 8px;
-
-  .booking-info-title {
-    font-weight: bolder;
-    font-size: 1.2em;
-  }
-
-  .booking-info-details {
-    font-weight: lighter;
-  }
-}
-        <% end %>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
+        <div class="tutorial-section">
+          <p>We're going to need two forms for each action. And we're going to hide the new status as a <code>hidden field</code>. The "button" is going to be the submit for the form. Like this:</p>
+          <div class="code-wrapper">
+            <% code('erb') do %>
+              <div class="d-flex">
+                <%%= simple_form_for booking do |f| %>
+                  <%%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+                  <%%= f.submit 'Accept', class: 'btn btn-info' %>
+                  <%% end %>
+                  <%%= simple_form_for booking do |f| %>
+                    <%%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
+                    <%%= f.submit 'Reject', class: 'btn btn-light' %>
+                    <%% end %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+            <div class="tutorial-section">
+              <h3 class='small-h3-header'>Status Conditional</h3>
+              <p>If your booking status is <code>pending</code> then we'll show the forms. Otherwise, we'll display the status.</p>
+               Let's create a method in our model.
+              <p>⚠️ If you are using status as an <code>enum</code>, you don't need this. You already have this method available.</p>
+              <div class="code-wrapper">
+                <% code('ruby') do %>
+                  # booking.rb (model)
+                  def pending?
+                  status == 'pending'
+                  end
+                <% end %>
+              </div>
+              <p>Now we can use that method in our conditional</p>
+              <div class="code-wrapper">
+                <% code('erb') do %>
+                  <%% if booking.pending? %>
+                  <!-- Display Forms-->
+                  <%% else %>
+                  <!-- Display Status-->
+                  <p class='booking-tag'><%%= booking.status %></p>
+                  <%% end %>
+                <% end %>
+              </div>
+              <p>We should get some bookings like this now:</p>
+              <div class="tutorial-container">
+                <div class="bookings">
+                  <div class="booking">
+                    <div class='booking-left'>
+                      <img src="https://kitt.lewagon.com/placeholder/users/dmbf29" class="avatar-bordered" />
+                      <div class="booking-info">
+                        <div class="booking-info-title">
+                          Douglas Berkley
+                        </div>
+                        <div class="booking-info-details">
+                          Dec 12, 8:00am - 11:00am
+                        </div>
+                      </div>
+                    </div>
+                    <div class="booking-actions">
+                      <button class='btn btn-info'>Accept</button>
+                      <button class='btn btn-light'>Reject</button>
+                    </div>
+                  </div>
+                  <div class="booking">
+                    <div class='booking-left'>
+                      <img src="https://kitt.lewagon.com/placeholder/users/yannklein" class="avatar-bordered" />
+                      <div class="booking-info">
+                        <div class="booking-info-title">
+                          Yann Klein
+                        </div>
+                        <div class="booking-info-details">
+                          Dec 13, 10:00am - 11:30am
+                        </div>
+                      </div>
+                    </div>
+                    <div class="booking-actions">
+                      <button class='btn btn-info'>Accept</button>
+                      <button class='btn btn-light'>Reject</button>
+                    </div>
+                  </div>
+                  <div class="booking">
+                    <div class='booking-left'>
+                      <img src="https://kitt.lewagon.com/placeholder/users/trounitiet" class="avatar-bordered" />
+                      <div class="booking-info">
+                        <div class="booking-info-title">
+                          Trouni Tiet
+                        </div>
+                        <div class="booking-info-details">
+                          Dec 15, 9:30am - 11:30am
+                        </div>
+                      </div>
+                    </div>
+                    <div class="booking-actions">
+                      <p class='booking-tag'>Accepted</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tutorial-section">
+            </div>
+            <div class="tutorial-section">
+              <h3 class='small-h3-header'>Wrap Up</h3>
+              <p>Now all we have to do is build these forms in our iteration.</p>
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h3 class='small-h3-header'>ERB</h3>
+                <button type='button' class='btn btn-dark btn-copy' data-container="body" data-toggle="popover" data-placement="top" data-content="Copied!">Copy</button>
+              </div>
+              <div class="code-wrapper">
+                <% code('erb') do %>
+                  <div class="bookings">
+                    <%% @bookings.each do |booking| %>
+                      <div class="booking">
+                        <div class='booking-left'>
+                          <!-- if you're using cloudinary and activestorage -->
+                          <%%= cl_image_tag booking.user.photo, class: 'avatar-bordered' %>
+                          <div class="booking-info">
+                            <div class="booking-info-title">
+                              <%%= booking.user.name %>
+                            </div>
+                            <div class="booking-info-details">
+                              <%%= booking.start_time.strftime('%l:%M %p') %> - <%%= booking.end_time.strftime('%l:%M %p') %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="booking-actions">
+                          <%% if booking.pending? %>
+                          <%%= simple_form_for booking do |f| %>
+                            <%%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+                            <%%= f.submit 'Accept', class: 'btn btn-info' %>
+                            <%% end %>
+                            <%%= simple_form_for booking do |f| %>
+                              <%%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
+                              <%%= f.submit 'Reject', class: 'btn btn-light' %>
+                              <%% end %>
+                              <%% else %>
+                              <p class='booking-tag'><%%= booking.status %></p>
+                              <%% end %>
+                            </div>
+                          </div>
+                          <%% end %>
+                        </div>
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="tutorial-section">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                      <h3 class='small-h3-header'>CSS</h3>
+                      <button type='button' class='btn btn-dark btn-copy' data-container="body" data-toggle="popover" data-placement="top" data-content="Copied!">Copy</button>
+                    </div>
+                    <div class="code-wrapper">
+                      <% code('scss') do %>
+                        .booking {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin: 16px 0;
+                        .booking-left {
+                        display: flex;
+                        align-items: center;
+                        }
+                        .booking-actions {
+                        display: flex;
+                        align-items: center;
+                        }
+                        .booking-tag {
+                        margin: 1px 4px;
+                        padding: 2px 5px 0px 5px;
+                        background-color: #bfbfbf;
+                        color: white;
+                        border-radius: 8px;
+                        font-weight: lighter;
+                        font-size: 12px;
+                        }
+                        }
+                        .booking-info {
+                        display: flex;
+                        flex-direction: column;
+                        margin-left: 8px;
+                        .booking-info-title {
+                        font-weight: bolder;
+                        font-size: 1.2em;
+                        }
+                        .booking-info-details {
+                        font-weight: lighter;
+                        }
+                        }
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>

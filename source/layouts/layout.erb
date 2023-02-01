@@ -15,7 +15,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Use title if it's in the page YAML frontmatter -->
-    <title><%= current_page.data.title || "Douglas Berkley" %></title>
+    <title><%= current_page.data.title || "Douglas Berkley - Web Developer" %></title>
+    <meta name="description" content="A brief look at what I'm up to">
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="Douglas Berkley - Web Developer" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.douglasberkley.com/" />
+    <meta property="og:image" content="<%= image_path 'og_image.png' %>" />
+    <meta property="og:description" content="A brief look at what I'm up to" />
+    <meta property="og:site_name" content="Douglas Berkley - Web Developer" />
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@Dmbf29">
+    <meta name="twitter:title" content="Douglas Berkley - Web Developer">
+    <meta name="twitter:description" content="A brief look at what I'm up to">
+    <meta name="twitter:creator" content="@Dmbf29">
+    <meta name="twitter:image:src" content="<%= image_path 'og_image.png' %>">
     <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
     <%#= display_meta_tags %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">

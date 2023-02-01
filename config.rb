@@ -46,11 +46,14 @@
 #     "Helping"
 #   end
 # end
-# activate :metaman, host: 'http://www.douglasberkley.com/'
 
 # Use sprockets for JS requires
 activate :sprockets
 activate :syntax
+
+# Meta Tags:
+# activate :metaman, host: 'http://www.douglasberkley.com/'
+# activate :meta_tags
 
 # Build-specific configuration
 configure :build do
