@@ -127,17 +127,6 @@
     - devicon-heroku-original
     - devicon-javascript-plain
 
-- name: Say Their Names
-  description: A list of people who were taken too soon
-  image: say_their_names.png
-  url: https://www.saytheirnames.xyz/
-  github: https://github.com/dmbf29/say-their-names
-  tags:
-    - devicon-ruby-plain-wordmark
-    - devicon-bootstrap-plain-wordmark
-    - devicon-html5-plain-wordmark
-    - devicon-css3-plain
-
 - name: Movie Watch List
   description: Keep track of your favorite movies
   image: watchlist.png
@@ -248,4 +237,14 @@
     - devicon-rails-plain-wordmark
     - devicon-postgresql-plain-wordmark
     - devicon-heroku-original
+    - devicon-javascript-plain
+
+- name: Number Blocks
+  description: Numbers game to sort blocks in the right order
+  image: numbers.png
+  url:  https://dmbf29.github.io/js-puzzle/
+  github: https://github.com/dmbf29/js-puzzle
+  tags:
+    - devicon-html5-plain-wordmark
+    - devicon-css3-plain
     - devicon-javascript-plain
