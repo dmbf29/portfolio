@@ -248,3 +248,13 @@
     - devicon-html5-plain-wordmark
     - devicon-css3-plain
     - devicon-javascript-plain
+
+- name: Wagon Race
+  description: Simple two player JS car racing game
+  image: wagon.png
+  url:  https://dmbf29.github.io/wagon-race/
+  github: https://github.com/dmbf29/wagon-race
+  tags:
+    - devicon-html5-plain-wordmark
+    - devicon-css3-plain
+    - devicon-javascript-plain
