@@ -26,6 +26,13 @@
     - activestorage
     - seeds
 
+- title: Nested Attributes in Rails
+  url: https://dev.to/dmbf29/how-to-use-nested-attributes-in-ruby-on-rails-create-multiple-objects-at-once-3m67
+  tags:
+    - rails
+    - forms
+    - stimulus
+
 # - title: Conditional navbar
 #   url: conditional_navbar.html
 #   tags:
