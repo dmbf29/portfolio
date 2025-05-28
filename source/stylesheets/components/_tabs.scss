@@ -7,7 +7,6 @@
   .tab-underlined {
     color: black;
     padding: 8px;
-    margin: 8px 16px;
     opacity: .4;
     cursor: pointer;
     text-decoration: none;
@@ -22,4 +21,24 @@
 .tabs-underlined .tab-underlined.active {
   opacity: 1;
   border-bottom: 3px solid #555555;
+}
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .tab-underlined {
+    font-size: 10px;
+    padding: 6px;
+  }
+}
+
+@media (min-width: 576px) {
+  .tab-underlined {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .tab-underlined {
+    margin: 4px;
+    font-size: 14px;
+  }
 }

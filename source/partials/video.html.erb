@@ -2,9 +2,21 @@
   <div class="row">
     <div class="col-12">
       <div class="main-container" id="videos">
-        <h2>Video</h2>
-        <p>Pitch night where I presented Gibbit after completing Le Wagon</p>
-        <iframe src="https://www.youtube.com/embed/QMDunGmWEAw?start=1661" frameborder="0" allowfullscreen></iframe>
+        <h2>Videos</h2>
+        <ul class="nav tabs-underlined" id="myTab" role="tablist">
+          <% data.videos.each_with_index do |video, index| %>
+            <li class="nav-item" role="presentation">
+              <span class="nav-link tab-underlined <%= "active" if index.zero? %>" data-bs-toggle="tab" data-bs-target="#tab-pane-<%= index %>" role="tab" aria-controls="tab-pane-<%= index %>" aria-selected="true"><%= video.title %></span>
+            </li>
+          <% end %>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <% data.videos.each_with_index do |video, index| %>
+            <div class="tab-pane fade py-3 <%= "show active" if index.zero? %>" id="tab-pane-<%= index %>" role="tabpanel" aria-labelledby="tab-pane-<%= index %>" tabindex="0">
+              <iframe src="<%= video.url %>" frameborder="0" allowfullscreen></iframe>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
