@@ -119,7 +119,7 @@
 - name: Yahtzee Online
   description: Play Yahtzee online with your friends
   image: yahtzee.png
-  url: https://www.yahtzee.club/
+  url:
   github: https://github.com/dmbf29/yahtzee
   tags:
     - devicon-rails-plain-wordmark
@@ -209,7 +209,7 @@
 - name: Yannify
   description: Add Yann's face to your photo
   image: yannify.png
-  url: https://yannify.herokuapp.com/
+  url:
   github: https://github.com/dmbf29/yannify
   tags:
     - devicon-rails-plain-wordmark
