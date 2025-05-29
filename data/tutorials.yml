@@ -1,5 +1,30 @@
+- title: Create an API with Rails
+  url: https://github.com/dmbf29/rails-api-tutorial
+  location: github
+  tags:
+    - rails
+    - api
+    - json
+
+- title: Middleman Template to Build a Portfolio
+  url: https://github.com/dmbf29/middleman-template
+  location: github
+  tags:
+    - middleman
+    - html
+    - css
+
+- title: Build a Chatbot with LINE
+  url: https://github.com/lewagonjapan/bob-the-bot
+  location: github
+  tags:
+    - sinatra
+    - line
+    - chatbot
+
 - title: How to approve and reject a booking
   url: https://dev.to/dmbf29/updating-a-booking-status-2ihh
+  location: dev.to
   tags:
     - rails
     - css
@@ -7,6 +32,7 @@
 
 - title: Making an entire card clickable
   url: https://dev.to/dmbf29/make-a-card-clickable-in-css-10fo
+  location: dev.to
   tags:
     - html
     - css
@@ -14,6 +40,7 @@
 
 - title: Building tabs with style
   url: https://dev.to/dmbf29/building-functional-tabs-with-style-pdb
+  location: dev.to
   tags:
     - bootstrap
     - html
@@ -21,6 +48,7 @@
 
 - title: Seeding fake users (w/images)
   url: https://dev.to/dmbf29/seeding-users-with-photos-157j
+  location: dev.to
   tags:
     - rails
     - activestorage
@@ -28,6 +56,7 @@
 
 - title: Nested Attributes in Rails
   url: https://dev.to/dmbf29/how-to-use-nested-attributes-in-ruby-on-rails-create-multiple-objects-at-once-3m67
+  location: dev.to
   tags:
     - rails
     - forms

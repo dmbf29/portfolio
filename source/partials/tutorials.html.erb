@@ -8,7 +8,11 @@
           <% data.tutorials.each do |tutorial| %>
             <div class="d-flex ul-title">
               <li class='d-flex'>
-                <%= image_tag 'dev.png', alt: "Dev.to logo", width: 25 %> <%= link_to tutorial.title, tutorial.url, target: '_blank', class: 'mx-2' %>
+                <% if tutorial.location == 'dev.to' %>
+                  <%= image_tag 'dev.png', alt: "Dev.to logo", width: 25, height: 20 %> <%= link_to tutorial.title, tutorial.url, target: '_blank', class: 'mx-2' %>
+                <% else %>
+                  <%= image_tag 'github.png', alt: "GitHub logo", width: 25, height: 25 %> <%= link_to tutorial.title, tutorial.url, target: '_blank', class: 'mx-2' %>
+                <% end %>
               </li>
               <div class="d-flex">
                 <% tutorial.tags.each do |tag| %>

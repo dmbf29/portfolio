@@ -1,3 +1,12 @@
+- name: Bootstrap Protector
+  description: Visual Studio Code extension
+  image: bootstrap_vscode.png
+  url: https://marketplace.visualstudio.com/items?itemName=dougberks.bootstrap-protector&ssr=false#overview
+  github: https://github.com/dmbf29/bootstrap-protector
+  tags:
+    - devicon-vscode-plain
+    - devicon-bootstrap-plain
+
 - name: Easy Label
   description: Automatically generate Japan Post shipping labels
   image: easylabel.png
@@ -51,6 +60,15 @@
   tags:
     - devicon-chrome-plain-wordmark
     - devicon-javascript-plain
+
+- name: Slack App Integration
+  description: Using the Slack API to communitcate with a Rails API
+  image: slack.png
+  url:
+  github:
+  tags:
+    - devicon-slack-plain
+    - devicon-rails-plain-wordmark
 
 - name: Jambox
   description: Keep track of all of your favorite music
@@ -244,16 +262,6 @@
   image: numbers.png
   url:  https://dmbf29.github.io/js-puzzle/
   github: https://github.com/dmbf29/js-puzzle
-  tags:
-    - devicon-html5-plain-wordmark
-    - devicon-css3-plain
-    - devicon-javascript-plain
-
-- name: Wagon Race
-  description: Simple two player JS car racing game
-  image: wagon.png
-  url:  https://dmbf29.github.io/wagon-race/
-  github: https://github.com/dmbf29/wagon-race
   tags:
     - devicon-html5-plain-wordmark
     - devicon-css3-plain
