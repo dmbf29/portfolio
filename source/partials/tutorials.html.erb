@@ -14,7 +14,7 @@
                   <%= image_tag 'github.png', alt: "GitHub logo", width: 25, height: 25 %> <%= link_to tutorial.title, tutorial.url, target: '_blank', class: 'mx-2' %>
                 <% end %>
               </li>
-              <div class="d-flex">
+              <div class="d-none d-sm-block">
                 <% tutorial.tags.each do |tag| %>
                   <span class='tutorial-tag'><%= tag %></span>
                 <% end %>
