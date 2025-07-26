@@ -61,6 +61,34 @@
     - devicon-chrome-plain-wordmark
     - devicon-javascript-plain
 
+- name: Rails API workshop
+  description: Rails API for cafes around Tokyo
+  image: matcha-api.png
+  url: https://matcha-and-keyboard-f549965e60e7.herokuapp.com/
+  github: https://github.com/dmbf29/rails-api-tutorial
+  tags:
+    - devicon-rails-plain-wordmark
+    - devicon-postgresql-plain-wordmark
+    - devicon-heroku-original
+
+- name: Matcha and Keyboard
+  description: React frontend to a Rails API
+  image: matcha.png
+  url: https://dmbf29.github.io/react-matcha-keyboard/
+  github: https://github.com/dmbf29/react-matcha-keyboard
+  tags:
+    - devicon-react-original-wordmarks
+    - devicon-javascript-plain
+
+- name: React Giphy Search
+  description: Using the Giphy API to search in React
+  image: react-giphy.png
+  url: https://dmbf29.github.io/react-giphy/
+  github: https://github.com/dmbf29/react-giphy
+  tags:
+    - devicon-react-original-wordmark
+    - devicon-javascript-plain
+
 - name: Slack App Integration
   description: Using the Slack API to communitcate with a Rails API
   image: slack.png
@@ -218,17 +246,6 @@
   image: starwars.png
   url:
   github: https://github.com/dmbf29/star_wars_characters
-  tags:
-    - devicon-rails-plain-wordmark
-    - devicon-postgresql-plain-wordmark
-    - devicon-heroku-original
-    - devicon-javascript-plain
-
-- name: Yannify
-  description: Add Yann's face to your photo
-  image: yannify.png
-  url:
-  github: https://github.com/dmbf29/yannify
   tags:
     - devicon-rails-plain-wordmark
     - devicon-postgresql-plain-wordmark
