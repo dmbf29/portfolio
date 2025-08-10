@@ -52,6 +52,15 @@
     - devicon-heroku-original
     - devicon-javascript-plain
 
+- name: Currency Converter
+  description: React frontend to a Rails API
+  image: currency.png
+  url: https://dmbf29.github.io/currency-conversion-react/
+  github: https://github.com/dmbf29/currency-conversion-react
+  tags:
+    - devicon-react-original-wordmark
+    - devicon-javascript-plain
+
 - name: Shopify Translator
   description: Chrome extension that translates Shopify
   image: translator.png
