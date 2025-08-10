@@ -60,6 +60,9 @@
   tags:
     - devicon-react-original-wordmark
     - devicon-javascript-plain
+    - devicon-rails-plain-wordmark
+    - devicon-postgresql-plain-wordmark
+    - devicon-heroku-original
 
 - name: Shopify Translator
   description: Chrome extension that translates Shopify
