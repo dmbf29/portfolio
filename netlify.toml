@@ -1,0 +1,9 @@
+# Podcast feed address for "Rising in the Sun Belt". Spotify and other podcast apps are pointed at
+# https://www.douglasberkley.com/podcast/feed.xml. This rule proxies (status 200, not a redirect) that address to the
+# feed file, so the host behind it can be changed later by editing this one line without telling Spotify anything.
+# Don't remove or reroute /podcast/feed.xml: the podcast depends on it.
+[[redirects]]
+  from = "/podcast/feed.xml"
+  to = "https://res.cloudinary.com/dmbf29/raw/upload/rising_in_the_sun_belt/feed.xml"
+  status = 200
+  force = true
