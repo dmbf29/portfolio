@@ -7,10 +7,6 @@
   to = "https://res.cloudinary.com/dmbf29/raw/upload/rising_in_the_sun_belt/feed.xml"
   status = 200
   force = true
-  # Cloudinary tells caches to keep the feed for 30 days, which would hide new episodes from browsers and any app that
-  # honors it. Five minutes keeps the feed fresh.
-  [redirects.headers]
-    Cache-Control = "public, max-age=300"
 
 # Retired: the old address was only used by a throwaway test show on Spotify. 410 Gone tells Spotify the feed was
 # removed on purpose so it drops that show. Safe to delete this rule once the test show is gone.
