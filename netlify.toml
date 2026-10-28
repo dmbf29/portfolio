@@ -1,6 +1,7 @@
 # Podcast feed address for "Rising in the Sun Belt". Spotify and other podcast apps are pointed at
 # https://www.douglasberkley.com/podcast/rising-in-the-sun-belt.xml. This rule proxies (status 200, not a redirect)
-# that address to the feed file, so the host behind it can be changed later by editing this one line without telling
+# that address to the feed file (netlify/edge-functions/podcast-feed.js now serves it with a short cache lifetime; this rule is the
+# fallback and must keep the same target), so the host behind it can be changed later by editing this one line without telling
 # Spotify anything. Don't remove or reroute /podcast/rising-in-the-sun-belt.xml: the podcast depends on it.
 [[redirects]]
   from = "/podcast/rising-in-the-sun-belt.xml"
